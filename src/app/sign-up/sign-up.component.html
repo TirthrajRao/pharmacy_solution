@@ -1,0 +1,80 @@
+<ion-content>
+  <div class="login-page" *ngIf="formDetails && details">
+    <!-- <h4 class="text-center">Jax Pharmacy</h4> -->
+    <div class="login_form">
+      <img src="assets/images/logo.png" class="logo-img">
+      <p class="english-title text-center mt-2">We don't just meet expectations, We exceed them.</p>
+      <p class="spanish-title text-center">No solo cumplimos con las expectativas, las superamos.</p>
+      <h4 class="text-center text-color">{{details.signUp}}</h4>
+      <form [formGroup]='signUpForm'>
+
+        <div class="form-group mb-4">
+          <input type="text" class="form-control" formControlName="first_name" [placeholder]="formDetails.firstName" />
+          <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+            <div *ngIf="f.first_name.errors.required">{{formDetails.validation.fname}}</div>
+          </div>
+        </div>
+
+        <div class="form-group mb-4">
+          <input type="text" class="form-control" formControlName="last_name" [placeholder]="formDetails.lastName" />
+          <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback">
+            <div *ngIf="f.last_name.errors.required">{{formDetails.validation.lname}}</div>
+          </div>
+        </div>
+
+
+        <div class="form-group mb-4">
+          <input type="email" class="form-control" formControlName="email" [placeholder]="formDetails.email" />
+          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required">{{formDetails.validation.email}}</div>
+            <div *ngIf="f.email.errors.email">{{formDetails.validation.email1}}</div>
+          </div>
+        </div>
+
+        <div class="form-group mb-4">
+          <input type="number" class="form-control" formControlName="phone_number" [placeholder]="formDetails.phone" />
+          <div *ngIf="submitted && f.phone_number.errors" class="invalid-feedback">
+            <div *ngIf="f.phone_number.errors.required">{{formDetails.validation.phone}}</div>
+          </div>
+        </div>
+
+        <div class="form-group mb-4" style="position: relative;">
+          <ion-icon [name]="passwordIcon" (click)="showHide()" class="eye-icon"></ion-icon>
+          <input [type]="passwordType" class="form-control" formControlName="password" id="password"
+            [placeholder]="formDetails.password">
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">{{formDetails.validation.password}}</div>
+          </div>
+        </div>
+        <button type="submit" class="login_btn btn" (click)="signUpUser(signUpForm.value)"
+          [disabled]="isDisable">{{details.signUp}}</button>
+
+        <div class="sign_up_link text-center">
+          <a href="#" routerLink='/login'>{{details.haveAcc}} <span> {{details.login}}</span></a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <div *ngIf="loading">
+    <div id="loader-wrapper">
+      <div class="heartbeatloader">
+        <div class="absCenter ">
+          <div class="loaderPill">
+            <div class="loaderPill-anim">
+              <div class="loaderPill-anim-bounce">
+                <div class="loaderPill-anim-flop">
+                  <div class="loaderPill-pill"></div>
+                </div>
+              </div>
+            </div>
+            <div class="loaderPill-floor">
+              <div class="loaderPill-floor-shadow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

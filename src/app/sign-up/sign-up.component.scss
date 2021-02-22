@@ -1,0 +1,28 @@
+ion-content {
+    // --background: #848484;
+    --background: none;
+    background-image: url("../../assets/images/login-bg.png");
+    background-repeat: repeat;
+    background-position: center;
+    input {
+        padding-left: 0.75rem;
+    }
+    .login-page {
+        height: 100vh;
+    }
+    .logo-img {
+        margin: auto;
+        display: block;
+        height: 80px;
+    }
+    .english-title {
+        margin: 0;
+        font-size: 9px;
+        color: var(--btn-color);
+    }
+    .spanish-title {
+        margin: 0;
+        font-size: 9px;
+        color: var(--title-color);
+    }
+}

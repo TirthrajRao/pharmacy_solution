@@ -1,0 +1,71 @@
+{
+  "project_info": {
+    "project_number": "500969976375",
+    "firebase_url": "https://guypark-pharmacy.firebaseio.com",
+    "project_id": "guypark-pharmacy",
+    "storage_bucket": "guypark-pharmacy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:500969976375:android:ee3e67e851086427df85b2",
+        "android_client_info": {
+          "package_name": "com.raoinfotech.guyparkpharmacy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "500969976375-amk3ucefrfkp4atkeg9blro3e3fkvi6g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.raoinfotech.guyparkpharmacy",
+            "certificate_hash": "e165ce9075347b092f7594b26f1960b1afaecf8e"
+          }
+        },
+        {
+          "client_id": "500969976375-0bpeh459oh351vocnpa11b1pfmt2n05v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.raoinfotech.guyparkpharmacy",
+            "certificate_hash": "ea6cb0eb3399cf160f62fb4cfde1b30e6968a6b9"
+          }
+        },
+        {
+          "client_id": "500969976375-762hqiv0tlubsj6tk0m41qm4v51rft8h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.raoinfotech.guyparkpharmacy",
+            "certificate_hash": "17af79d117059ad7509d52b199d02c19fb4b17c6"
+          }
+        },
+        {
+          "client_id": "500969976375-m25m8gosb01n8as8faae41upsdftv9qa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHdeq3jR7SQKFRRvQruwxCWE5O6fq-4Tg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "500969976375-m25m8gosb01n8as8faae41upsdftv9qa.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "500969976375-0vl33tf7kjf37s2v7p8ah8vpip7hid5r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.raoinfotech.guyparkpharmacy"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

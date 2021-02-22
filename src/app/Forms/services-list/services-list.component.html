@@ -1,0 +1,27 @@
+<ion-header>
+  <app-header [cname]="detail.headerTitle"></app-header>
+</ion-header>
+<ion-content>
+  <div class="roboto-miduim serivice-title">
+    <div class="inner-section" *ngIf="detail">
+      <h4>{{detail.serviceOptionTitle}}</h4>
+      <img src="assets/images/logo.png" class="logo-img ml-auto mr-2">
+    </div>
+  </div>
+  <div class="form-list">
+    <div *ngFor="let form of formList;let i=index" class="text-center form-name mb-3" [routerLink]="form.url">
+      <div class="img-div" [ngStyle]="{'width':i==2?'45px':''}">
+        <img src="{{form.icon}}" >
+      </div>
+      <span class="ml-4">{{form.name}}</span>
+      <span class="icons">
+        <i class="fa fa-long-arrow-right" aria-hidden="true">
+        </i>
+      </span>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <app-footer></app-footer>
+</ion-footer>

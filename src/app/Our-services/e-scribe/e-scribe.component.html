@@ -1,0 +1,32 @@
+<ion-header>
+  <div class="header d-flex">
+    <div class="back-icon float-left">
+      <ion-back-button [icon]="'arrow-back-outline'" [text]="">
+      </ion-back-button>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content class="service-detail">
+  <div class="cover-img curbside">
+    <div class="about-img">
+      <img src="assets/images/e-scribe-inside.jpg">
+    </div>
+  </div>
+  <div class="servicename-card">
+    <p class="card-title m-0">{{details.title}}</p>
+    <p class="des m-0">{{details.subTitle}}</p>
+  </div>
+  <div class="about-text">
+    <p class="titles m-0 mb-2">{{details.contentTitle}}</p>
+    <p class="sub-title">{{details.content1}}</p>
+    <p class="sub-title">{{details.content1}}</p>
+    <ul class="sub-title">
+      <li>{{details.list1}}</li>
+      <li>{{details.list2}}</li>
+      <li>{{details.list3}}</li>
+    </ul>
+    <p class="sub-title"> {{details.content2}}</p>
+    <p class="sub-title">{{details.content3}}</p>
+  </div>
+</ion-content>

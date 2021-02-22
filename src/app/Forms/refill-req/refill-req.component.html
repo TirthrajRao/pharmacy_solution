@@ -1,0 +1,202 @@
+<ion-header>
+  <app-header [cname]="formDetail.appName"></app-header>
+</ion-header>
+
+<ion-content class="roboto-miduim">
+  <div class="serivice-title">
+    <img src="assets/images/red/refill request.svg" class="icon">
+    <h4>{{formDetail.form2}}</h4>
+    <img src="assets/images/logo.png" class="logo-img ml-auto mr-2">
+  </div>
+  <div class="medication-forms">
+    <div class="form-name">
+      <p class="mb-3 titles">{{formDetail.basicDetail}}</p>
+    </div>
+    <ul class="nav nav-tabs" role="tablist" style="border: none;">
+      <li role="presentation" class="active">
+        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" aria-expanded="true">
+
+        </a>
+      </li>
+      <li role="presentation" class="disabled">
+        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" aria-expanded="false">
+
+        </a>
+      </li>
+    </ul>
+    <form [formGroup]="refillReqForm">
+      <div class="tab-content" id="main_form">
+        <div class="tab-pane active" role="tabpanel" id="step1">
+          <div class="form-group">
+            <input type="text" class="form-control" [placeholder]="formDetail.firstName" formControlName="first_name"
+              [(ngModel)]="currentUserData.first_name">
+            <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+              <div *ngIf="f.first_name.errors.required">{{formDetail.validation.fname}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" [placeholder]="formDetail.lastName" formControlName="last_name"
+              [(ngModel)]="currentUserData.last_name">
+            <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback">
+              <div *ngIf="f.last_name.errors.required">{{formDetail.validation.lname}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="email" class="form-control" [placeholder]="formDetail.email" formControlName="email"
+              [(ngModel)]="currentUserData.email">
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">{{formDetail.validation.email}}</div>
+              <div *ngIf="f.email.errors.email">{{formDetail.validation.email1}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="number" class="form-control" [placeholder]="formDetail.phone" formControlName="phone_number"
+              [(ngModel)]="currentUserData.phone_number">
+            <div *ngIf="submitted && f.phone_number.errors" class="invalid-feedback">
+              <div *ngIf="f.phone_number.errors.required">{{formDetail.validation.phone}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="number" class="form-control" [placeholder]="formDetail.mobile" formControlName="mobile_number">
+            <div *ngIf="submitted && f.mobile_number.errors" class="invalid-feedback">
+              <div *ngIf="f.mobile_number.errors.required">{{formDetail.validation.mobile}}</div>
+            </div>
+          </div>
+
+          <div class="form-group" style="position: relative;">
+            <ion-datetime [placeholder]="formDetail.birthDate" max="{{curruntDate}}" formControlName="date_of_birth">
+            </ion-datetime>
+            <i class="fa fa-calendar-o date-icon" aria-hidden="true"></i>
+            <div *ngIf="submitted && f.date_of_birth.errors" class="invalid-feedback">
+              <div *ngIf="f.date_of_birth.errors.required">{{formDetail.validation.birthdate}}</div>
+            </div>
+          </div>
+
+
+
+          <div class="form-group" style="position: relative;">
+            <ion-select placeholder="Delivery Method" formControlName="delivery_method" appNoArrow>
+              <ion-select-option value="Pick Up">{{formDetail.pickUp}}</ion-select-option>
+              <ion-select-option value="Home Delivery">{{formDetail.freeDelivery}}</ion-select-option>
+            </ion-select>
+            <ion-icon name="chevron-down-outline" class="date-icon" style="top: 14px;"></ion-icon>
+          </div>
+          <ul class="list-inline pull-right submit-btn">
+            <li><button type="button" class="default-btn next-step btn">Next </button></li>
+          </ul>
+        </div>
+
+        <div class="tab-pane" role="tabpanel" id="step2">
+
+          <div class="row rx-number m-0">
+            <label class="w-100">{{formDetail.refillHeaing}}</label>
+
+            <div class="col-6 p-0 pr-2">
+              <input type="text" class="form-control" placeholder="Rx 1 #" formControlName="rx_number_1">
+            </div>
+
+            <div class="col-6 p-0 pr-2">
+              <input type="text" class="form-control" placeholder="Rx 2 #" formControlName="rx_number_2">
+            </div>
+
+            <div class="col-6 p-0 pr-2">
+              <input type="text" class="form-control" placeholder="Rx 3 #" formControlName="rx_number_3">
+            </div>
+
+            <div class="col-6 p-0 pr-2">
+              <input type="text" class="form-control" placeholder="Rx 4 #" formControlName="rx_number_4">
+            </div>
+
+            <div class="col-6 p-0 pr-2">
+              <input type="text" class="form-control" placeholder="Rx 5 # " formControlName="rx_number_5">
+            </div>
+
+            <div class="col-6 p-0 pr-2">
+              <input type="text" class="form-control" placeholder="Rx 6 #" formControlName="rx_number_6">
+            </div>
+
+            <div class="col-6 p-0 pr-2">
+              <input type="text" class="form-control" placeholder="Rx 7 #" formControlName="rx_number_7">
+            </div>
+
+            <div class="col-6 p-0 pr-2">
+              <input type="text" class="form-control" placeholder="Rx 8 #" formControlName="rx_number_8">
+            </div>
+
+            <div class="col-6 p-0 pr-2">
+              <input type="text" class="form-control" placeholder="Rx 9 #" formControlName="rx_number_9">
+            </div>
+
+            <div class="col-6 p-0 pr-2">
+              <input type="text" class="form-control" placeholder="Rx 10 #" formControlName="rx_number_10">
+            </div>
+            <div class="col-6 p-0 pr-2">
+              <input type="text" class="form-control" placeholder="Rx 11 #" formControlName="rx_number_11">
+            </div>
+            <div class="col-6 p-0 pr-2">
+              <input type="text" class="form-control" placeholder="Rx 12 #" formControlName="rx_number_12">
+            </div>
+          </div>
+          <div class="form-footer">
+            <ion-item lines="none">
+              <ion-label position="floating">
+                <i class="fa fa-calendar-o" aria-hidden="true"></i> {{formDetail.pickDate}}
+              </ion-label>
+              <ion-datetime display-timezone="utc" min="{{curruntDate}}" max="{{nextYear}}"
+                formControlName="pick_up_date">
+              </ion-datetime>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-label position="floating">
+                <i class="fa fa-clock-o" aria-hidden="true"></i> {{formDetail.pickTime}}
+              </ion-label>
+              <ion-datetime display-format="h:mm A" picker-format="h:mm A" formControlName="pick_up_time">
+              </ion-datetime>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-label position="floating">
+                <i class="fa fa-calendar-o" aria-hidden="true"></i>   {{formDetail.reminder}}
+              </ion-label>
+              <ion-datetime display-timezone="utc" min="{{curruntDate}}" max="{{nextYear}}"
+                formControlName="refill_date">
+              </ion-datetime>
+            </ion-item>
+          </div>
+          <ul class="list-inline submit-btn float-right">
+            <li><button type="button" class="default-btn prev-step btn">Back</button></li>
+          </ul>
+          <div class="submit-btn">
+            <button class="btn" [disabled]="isDisable"
+              (click)="addRefillReq(refillReqForm.value)">{{formDetail.btnText}}</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div *ngIf="loading">
+    <div id="loader-wrapper">
+      <div class="heartbeatloader">
+        <div class="absCenter ">
+          <div class="loaderPill">
+            <div class="loaderPill-anim">
+              <div class="loaderPill-anim-bounce">
+                <div class="loaderPill-anim-flop">
+                  <div class="loaderPill-pill"></div>
+                </div>
+              </div>
+            </div>
+            <div class="loaderPill-floor">
+              <div class="loaderPill-floor-shadow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

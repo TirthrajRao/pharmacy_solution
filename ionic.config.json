@@ -1,0 +1,7 @@
+{
+  "name": "jax-pharmacy",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

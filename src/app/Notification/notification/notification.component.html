@@ -1,0 +1,56 @@
+<ion-header>
+  <app-header [cname]="details.title"></app-header>
+</ion-header>
+
+<ion-content>
+  <div class="roboto-miduim serivice-title">
+    <img src="assets/images/notification.png" class="icon">
+    <h4>{{details.title}}</h4>
+    <img src="assets/images/logo.png" class="logo-img ml-auto mr-2">
+  </div>
+  <div class="notification-list" *ngIf="notificationList.length">
+    <div class="notification-card mb-3 notification-{{i}}" *ngFor="let notification of notificationList;let i=index"
+      [ngClass]="notification.color" >
+      <div class="row" (swipe)="swipeEvent($event,notification.notification_id,i)"
+      [style.touch-action]="'pan-y'">
+        <div class="col-3">
+          <div class="notification-img" class="image-{{i}}">
+            <img [src]="notification.image" onError="src='assets/images/imgloader.gif'" (load)="onImageLoad(i)">
+          </div>
+        </div>
+        <div class="col-9 pl-0 mt-2">
+          <h4 class=" notification-title">{{notification.title}}</h4>
+          <div class="service-content sans-font">
+            <div class=" ml-2 mt-2 mb-0 notification-content" [innerHtml]="notification.message"></div>
+            <p class="read-more mt-2" routerLink="/home/notification-detail/{{notification.notification_id}}">Read More
+              <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="loading">
+    <div id="loader-wrapper">
+      <div class="heartbeatloader">
+        <div class="absCenter ">
+          <div class="loaderPill">
+            <div class="loaderPill-anim">
+              <div class="loaderPill-anim-bounce">
+                <div class="loaderPill-anim-flop">
+                  <div class="loaderPill-pill"></div>
+                </div>
+              </div>
+            </div>
+            <div class="loaderPill-floor">
+              <div class="loaderPill-floor-shadow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="no-data" *ngIf="!loading && !notificationList.length">
+    <span>No Notification Found</span>
+  </div>
+</ion-content>

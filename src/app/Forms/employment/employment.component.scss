@@ -1,0 +1,39 @@
+.file-select {
+    span {
+        background: var(--btn-color);
+        padding: 10px;
+        color: white;
+        // border-radius: 5px;
+        font-size: 12px;
+    }
+}
+ion-content {
+    --background: rgba(228, 228, 228, 20%);
+}
+
+ion-header {
+    height: 0;
+    ion-back-button,
+    ion-menu-button {
+        color: var(--heading-color);
+    }
+    ion-toolbar {
+        --background: transparent;
+    }
+}
+
+h4 {
+    margin: 0;
+    color: var(--title-color);
+    font-size: 14px;
+}
+.form {
+    padding: 20px 49px;
+}
+.submit-btn{
+    .btn{
+        background: linear-gradient(to right, #15275E, #4160B8);
+        padding: 8px 43px;
+        font-size: 21px;
+    }
+}

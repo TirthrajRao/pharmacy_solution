@@ -1,0 +1,88 @@
+ion-content {
+    --background: #f0f2f9;
+}
+.card {
+    margin-top: 15px;
+    border-radius: 4px;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    @media (max-height: 750px) {
+        margin-top: 5px;
+    }
+    .card_header {
+        p {
+            color: #434a5e;
+            font-size: 17px;
+            font-weight: 600;
+            padding: 15px;
+            line-height: 20px;
+            border-bottom: 1px solid #c7cbd6;
+        }
+        ion-img {
+            cursor: pointer;
+            width: 25px;
+            float: right;
+            position: absolute;
+            top: 11px;
+            right: 10px;
+        }
+    }
+    .card_body {
+        padding: 5px 0px 20px 0px;
+        ion-card {
+            margin-inline-start: 0px;
+            width: 100%;
+            margin-inline-end: 0px;
+            margin-bottom: 15px;
+            ion-card-content {
+                display: inline-block;
+                width: 100%;
+                padding: 8px 10px;
+                position: relative;
+                margin-bottom: 12px;
+                margin: 0px;
+                ion-img {
+                    width: 24px;
+                    position: absolute;
+                    right: 10px;
+                    top: 0;
+                    bottom: 0;
+                }
+                .user_detail {
+                    width: 100%;
+                    small {
+                        color: #7f8dab;
+                        font-size: 13px;
+                        line-height: 30px;
+                    }
+                    p {
+                        color: #000;
+                        font-size: 18px;
+                        font-weight: 600;
+                    }
+                    ion-datetime {
+                        padding: 0;
+                        color: black;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}
+.reset-link {
+    a {
+        background: var(--btn-color);
+        color: white;
+        margin-right: 10px;
+        padding: 2px 20px;
+        padding: 4px 20px;
+        font-size: 14px;
+    }
+}
+.submit-btn{
+    .btn{
+        background: linear-gradient(to right, #15275e, #4160b8);
+        padding: 11px 66px;
+        font-size: 21px;
+    }
+}

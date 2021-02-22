@@ -1,0 +1,11 @@
+ion-header {
+    height: 0;
+    ion-back-button,
+    ion-menu-button {
+        color: var(--heading-color);
+    }
+    ion-toolbar {
+        --background: transparent;
+    }
+}
+

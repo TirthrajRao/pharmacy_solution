@@ -1,0 +1,109 @@
+<ion-content>
+  <div class="login-page" *ngIf="details && formDetails">
+    <div class="login_form">
+      <img src="assets/images/logo.png" class="logo-img">
+      <p class="english-title text-center mt-2">We don't just meet expectations, We exceed them.</p>
+      <p class="spanish-title text-center">No solo cumplimos con las expectativas, las superamos.</p>
+      <h4 class="text-center text-color">{{details.title}}</h4>
+      <form [formGroup]='loginForm'>
+        <div class="form-group mb-4" style="position: relative;">
+          <input type="email" class="form-control" formControlName="username" [placeholder]="formDetails.email" />
+          <ion-icon name="mail-outline" class="lock-icon" style="top: 10px;"></ion-icon>
+          <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">{{formDetails.validation.email}}</div>
+            <div *ngIf="f.username.errors.email">{{formDetails.validation.email1}}</div>
+          </div>
+        </div>
+        <div class="form-group mb-4" style="position: relative;">
+          <ion-icon name="lock-open-outline" class="lock-icon" style="top: 10px;"></ion-icon>
+          <ion-icon [name]="passwordIcon" (click)="showHide()" class="eye-icon"></ion-icon>
+          <input [type]="passwordType" class="form-control" formControlName="password" id="password"
+            [placeholder]="formDetails.password">
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">{{formDetails.validation.password}}</div>
+          </div>
+        </div>
+        <button type="submit" class="login_btn btn" (click)="loginUser(loginForm.value)"
+          [disabled]="isDisable">{{details.login}}</button>
+        <div class="sign_up_link text-center" (click)="openModal()">
+          <a id="forgot-psw">{{details.forPsw}}</a>
+        </div>
+        <div class="or_section">{{details.conect}}</div>
+        <div class="social_media_login">
+          <div class="row">
+            <div class="col-6">
+              <div class="facebook_login">
+                <button href="#" class="facebook_btn btn" (click)="facebookLogin()" [disabled]="isDisable"><i
+                    class="fa fa-facebook" aria-hidden="true"></i>{{details.facebook}}
+                </button>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="google_login">
+                <button class="google_btn btn" (click)="googleLogin()" [disabled]="isDisable"><img
+                    src="assets/images/google.png">
+                  {{details.google}}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="isPlatformIos" class="social_media_login mt-3">
+          <div class="google_login">
+            <button class="google_btn apple_btn btn" (click)="appleLogin()" [disabled]="isDisable">
+              <ion-icon name="logo-apple"></ion-icon>
+              Sign in with Apple</button>
+          </div>
+        </div>
+        <div class="sign_up_link text-center">
+          <a href="#" routerLink='/sign-up'>{{details.newAccount}} <span> {{details.signUp}}</span></a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div *ngIf="loading">
+    <div id="loader-wrapper">
+      <div class="heartbeatloader">
+        <div class="absCenter ">
+          <div class="loaderPill">
+            <div class="loaderPill-anim">
+              <div class="loaderPill-anim-bounce">
+                <div class="loaderPill-anim-flop">
+                  <div class="loaderPill-pill"></div>
+                </div>
+              </div>
+            </div>
+            <div class="loaderPill-floor">
+              <div class="loaderPill-floor-shadow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal_content_with_overlay" id="forgot-password" style="display: none;">
+    <div class="modal_body">
+      <div class="modal_content">
+        <h5 class="titles">Forgot Password</h5>
+        <form [formGroup]='forgotPswForm'>
+          <div class="form-group">
+            <div>
+              <ion-item>
+                <ion-label position="floating">{{formDetails.email}}</ion-label>
+                <ion-input type="email" formControlName="email"></ion-input>
+              </ion-item>
+              <div *ngIf="submmitedFPsw && fpsw.email.errors" class="invalid-feedback">
+                <div *ngIf="fpsw.email.errors.required">{{formDetails.validation.email}}</div>
+                <div *ngIf="fpsw.email.errors.email">{{formDetails.validation.email1}}</div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="submit-btn">
+          <button type="submit" class="btn" (click)="forgotPassword(forgotPswForm.value)" [disabled]="isDisable">{{formDetails.btnText}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

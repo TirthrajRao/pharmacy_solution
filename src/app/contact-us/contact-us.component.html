@@ -1,0 +1,92 @@
+<ion-header>
+  <div class="header d-flex">
+    <div class="back-icon float-left">
+      <ion-back-button [icon]="'arrow-back-outline'" [text]="">
+      </ion-back-button>
+    </div>
+    <div class="menu-icon float- ml-auto">
+      <ion-menu-button>
+      </ion-menu-button>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content class="service-detail">
+  <div class="about-img">
+    <img src="assets/images/about1.png">
+  </div>
+  <div class="servicename-card">
+    <p class="card-title m-0 mt-2">{{details.title}}</p>
+    <p class="des m-0">{{details.subTitle}}</p>
+  </div>
+  <div class="logo-img mt-3">
+    <img src="assets/images/logo.png">
+  </div>
+
+  <div class="about-text ">
+    <h4 class="header-text mb-3 text-center mt-3">{{details.contentTitle1}}</h4>
+    <div class="mt-3">
+      <div class="location-detail row m-0" style="align-items:unset">
+        <div class="col-4 p-0">
+          <div class="d-flex">
+            <div class="image-icon" style="width: 26px;">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+            </div>
+            <p class="title">{{details.location}}: </p>
+          </div>
+        </div>
+        <div class="col-8 p-0">
+          <span class="detail"><span> XXX XXX XXXX XXX,<br>
+              XXXXXXXX, XXX XXXX (XXXXX), <br>XXX.</span></span>
+        </div>
+      </div>
+      <div class="row m-0 location-detail">
+        <div class="col-4 p-0">
+          <div class="d-flex" style="align-items: center;">
+            <div class="image-icon email">
+              <i class="fa fa-fax" aria-hidden="true"></i>
+            </div>
+            <p class="title mb-0">Fax: </p>
+          </div>
+        </div>
+        <div class="col-8 p-0">
+          <span class="detail"><a href="518-212-6062">XXX-XXX-XXXX</a></span>
+        </div>
+      </div>
+      <div class="row m-0 location-detail">
+        <div class="col-4 p-0">
+          <div class="d-flex" style="align-items: center;">
+            <div class="image-icon email">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+            </div>
+            <p class="title mb-0">Email: </p>
+          </div>
+        </div>
+        <div class="col-8 p-0">
+          <span class="detail" >XXXXXX@XXXX.XXX</span>
+        </div>
+      </div>
+      <div class="row m-0 location-detail">
+        <div class="col-4 p-0">
+          <div class="d-flex" style="align-items: center;">
+            <div class="image-icon">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+            </div>
+            <p class="title mb-0">{{details.Phone}}: </p>
+          </div>
+        </div>
+        <div class="col-8 p-0">
+          <span class="detail"><a class="tel"
+            href="tel:{{details.phone}}"> XXX-XXX-XXXX </a></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-3">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2920.6064809156333!2d-74.20033338456372!3d42.94442227915197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89de61c65a0da693%3A0x3e7c7380ccbceb04!2s151%20Guy%20Park%20Ave%2C%20Amsterdam%2C%20NY%2012010%2C%20USA!5e0!3m2!1sen!2sin!4v1592037933448!5m2!1sen!2sin"
+        width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+        tabindex="0"></iframe>
+    </div>
+  </div>
+</ion-content>

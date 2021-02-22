@@ -1,0 +1,172 @@
+<ion-header>
+  <app-header [cname]="formDetail.form3"></app-header>
+</ion-header>
+
+<ion-content class="roboto-miduim">
+  <div class="serivice-title">
+    <img src="assets/images/red/price check.svg" class="icon">
+    <h4>{{formDetail.form3}}</h4>
+    <img src="assets/images/logo.png" class="logo-img ml-auto mr-2">
+  </div>
+  <div class="medication-forms">
+    <div class="form-name">
+      <p class="mb-3 titles">{{formDetail.basicDetail}}</p>
+    </div>
+    <ul class="nav nav-tabs" role="tablist" style="border: none;">
+      <li role="presentation" class="active">
+        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" aria-expanded="true">
+
+        </a>
+      </li>
+      <li role="presentation" class="disabled">
+        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" aria-expanded="false">
+
+        </a>
+      </li>
+    </ul>
+    <form [formGroup]="priceCheckForm">
+      <div class="tab-content" id="main_form">
+        <div class="tab-pane active" role="tabpanel" id="step1">
+          <div class="form-group">
+            <input type="text" class="form-control" [placeholder]="formDetail.firstName" formControlName="first_name"
+              [(ngModel)]="currentUserData.first_name">
+            <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+              <div *ngIf="f.first_name.errors.required">{{formDetail.validation.fname}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" [placeholder]="formDetail.lastName" formControlName="last_name"
+              [(ngModel)]="currentUserData.last_name">
+            <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback">
+              <div *ngIf="f.last_name.errors.required">{{formDetail.validation.lname}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="email" class="form-control" [placeholder]="formDetail.email" formControlName="email"
+              [(ngModel)]="currentUserData.email">
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">{{formDetail.validation.email}}</div>
+              <div *ngIf="f.email.errors.email">{{formDetail.validation.email1}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="number" class="form-control" [placeholder]="formDetail.phone" formControlName="phone_number"
+              [(ngModel)]="currentUserData.phone_number">
+            <div *ngIf="submitted && f.phone_number.errors" class="invalid-feedback">
+              <div *ngIf="f.phone_number.errors.required">{{formDetail.validation.phone}}</div>
+            </div>
+          </div>
+          <ul class="list-inline pull-right submit-btn">
+            <li><button type="button" class="default-btn next-step btn">Next </button></li>
+          </ul>
+        </div>
+        <div class="tab-pane" role="tabpanel" id="step2">
+          <div class="row rx-number m-0">
+            <label class=" w-100">{{formDetail.priceHeading}}</label>
+            <div class="col-6 p-0 pr-1">
+              <input type="text" class="form-control" [placeholder]="formDetail.medName"
+                formControlName="medicine_name_1">
+            </div>
+            <div class="col-3 p-0 pr-1">
+              <input type="text" class="form-control" [placeholder]="formDetail.strength"
+                formControlName="medicine_1_strength">
+            </div>
+            <div class="col-3 p-0 pr-1">
+              <input type="text" class="form-control" [placeholder]="formDetail.quantity"
+                formControlName="madicine_1_quantity">
+            </div>
+            <div class="col-6 p-0 pr-1">
+              <input type="text" class="form-control" [placeholder]="formDetail.medName"
+                formControlName="medicine_name_2">
+            </div>
+            <div class="col-3 p-0 pr-1">
+              <input type="text" class="form-control" [placeholder]="formDetail.strength"
+                formControlName="medicine_2_strength">
+            </div>
+            <div class="col-3 p-0 pr-1">
+              <input type="text" class="form-control" [placeholder]="formDetail.quantity"
+                formControlName="madicine_2_quantity">
+            </div>
+            <div class="col-6 p-0 pr-1">
+              <input type="text" class="form-control" [placeholder]="formDetail.medName"
+                formControlName="medicine_name_3">
+            </div>
+            <div class="col-3 p-0 pr-1">
+              <input type="text" class="form-control" [placeholder]="formDetail.strength"
+                formControlName="medicine_3_strength">
+            </div>
+            <div class="col-3 p-0 pr-1">
+              <input type="text" class="form-control" [placeholder]="formDetail.quantity"
+                formControlName="madicine_3_quantity">
+            </div>
+            <div class="col-6 p-0 pr-1">
+              <input type="text" class="form-control" [placeholder]="formDetail.medName"
+                formControlName="medicine_name_4">
+            </div>
+            <div class="col-3 p-0 pr-1">
+              <input type="text" class="form-control" [placeholder]="formDetail.strength"
+                formControlName="medicine_4_strength">
+            </div>
+            <div class="col-3 p-0 pr-1">
+              <input type="text" class="form-control" [placeholder]="formDetail.quantity"
+                formControlName="madicine_4_quantity">
+            </div>
+            <div class="col-6 p-0 pr-1">
+              <input type="text" class="form-control" [placeholder]="formDetail.medName"
+                formControlName="medicine_name_5">
+            </div>
+            <div class="col-3 p-0 pr-1">
+              <input type="text" class="form-control" [placeholder]="formDetail.strength"
+                formControlName="medicine_5_strength">
+            </div>
+            <div class="col-3 p-0 pr-1">
+              <input type="text" class="form-control" [placeholder]="formDetail.quantity"
+                formControlName="madicine_5_quantity">
+            </div>
+          </div>
+
+          <div class="form-footer">
+            <ion-item lines="none">
+              <ion-label position="floating">
+                <!-- <img src="assets/images/note.png" alt=""> -->
+                {{formDetail.note}}
+              </ion-label>
+              <ion-input type="text" formControlName="note_to_pharmacy"></ion-input>
+            </ion-item>
+          </div>
+          <ul class="list-inline submit-btn float-right">
+            <li><button type="button" class="default-btn prev-step btn"> 
+              Back</button></li>
+          </ul>
+          <div class="submit-btn">
+            <button class="btn " [disabled]="isDisable"
+              (click)="addPriceForm(priceCheckForm.value)">{{formDetail.btnText}}</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div *ngIf="loading">
+    <div id="loader-wrapper">
+      <div class="heartbeatloader">
+        <div class="absCenter ">
+          <div class="loaderPill">
+            <div class="loaderPill-anim">
+              <div class="loaderPill-anim-bounce">
+                <div class="loaderPill-anim-flop">
+                  <div class="loaderPill-pill"></div>
+                </div>
+              </div>
+            </div>
+            <div class="loaderPill-floor">
+              <div class="loaderPill-floor-shadow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

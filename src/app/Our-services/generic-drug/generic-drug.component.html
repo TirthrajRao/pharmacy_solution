@@ -1,0 +1,26 @@
+<ion-header>
+  <div class="header d-flex">
+    <div class="back-icon float-left">
+      <ion-back-button [icon]="'arrow-back-outline'" [text]="">
+      </ion-back-button>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content class="service-detail">
+  <div class="cover-img curbside">
+    <!-- <div class="service-img">
+      <img src="assets/images/generic-drug.png">
+    </div> -->
+    <div class="about-img">
+      <img src="assets/images/drug-inside.jpg">
+    </div>
+  </div>
+  <div class="servicename-card">
+    <p class="card-title m-0">{{details.title}}</p>
+    <p class="des m-0">{{details.subTitle}}</p>
+  </div>
+  <div class="about-text">
+    <p class="sub-title"><strong>{{details.contentTitle}}</strong> {{details.content1}}</p>
+  </div>
+</ion-content>

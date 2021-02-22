@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar class="toolbar-color1">
+    <div class="menu d-flex">
+      <ion-title class="text-center">{{details.headerTitle}}</ion-title>
+      <div class="menu-icon float-right ml-auto">
+        <ion-menu-button class=" text-white">
+        </ion-menu-button>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style=" height: 100%;">
+    <div class="pharmacy-service">
+      <div class="roboto-miduim serivice-title">
+        <div class="inner-section">
+          <h4>{{details.serviceOptionTitle}}</h4>
+          <img src="assets/images/logo.png" class="logo-img ml-auto mr-3">
+        </div>
+      </div>
+      <div class="services-content ion-padding">
+        <div class="row m-0">
+          <div class="col-4 p-0" routerLink="/home/transfer-prescription">
+            <div class="icon-bg">
+              <div class="img-div">
+                <img src="assets/images/red/transfer.svg">
+              </div>
+            </div>
+            <p class="form-name">{{details.TransferPrescripsion}}</p>
+          </div>
+          <div class="col-4 p-0" routerLink="/home/refill-request">
+            <div class="icon-bg">
+              <div class="img-div">
+                <img src="assets/images/red/refill request.svg">
+              </div>
+            </div>
+            <p class="form-name">{{details.RefillRequest}}</p>
+          </div>
+          <div class="col-4 p-0" routerLink="/home/price-check">
+            <div class="icon-bg">
+              <div class="img-div" style="width: 45px;">
+                <img src="assets/images/red/price check.svg">
+              </div>
+            </div>
+            <p class="form-name">{{details.PriceCheck}}</p>
+          </div>
+        </div>
+        <div class="service-section" routerLink="/home/our-services">
+          <div class="service-detail">
+            <p class="mb-0 service-title">
+              {{details.Services}}
+            </p>
+            <span class="about">{{details.explore}}</span>
+            <div class="service-btn  text-center">
+              <span class="btn-text">{{details.allServices}} </span>
+            </div>
+          </div>
+          <div class="service-img-sec">
+            <img src="assets/images/service.png">
+          </div>
+        </div>
+        <div class="service-detail">
+          <div class="servicename-card pl-4" style="margin: 26px 0px 0;" routerLink="/home/about-us">
+            <p class="card-title m-0 mt-2">{{details.title}}</p>
+            <p class="des m-0">{{details.subTitle}}</p>
+            <img src="assets/images/about3.png">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <app-footer></app-footer>
+</ion-footer>

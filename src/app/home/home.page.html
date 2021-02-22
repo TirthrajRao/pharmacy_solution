@@ -1,0 +1,36 @@
+<ion-menu side="start" menuId="first" contentId="content">
+  <div class="menu">
+    <div class="logo-img">
+      <img src="assets/images/logo.png" alt="logo-img">
+    </div>
+    <hr>
+    <div class="all-menu-list">
+      <div class="menu-list" *ngFor="let page of menuPages;let i=index" [routerLink]='page.url' (click)="closeMenu(i)"
+        [ngClass]="page.class">
+        <div class="menu-name">
+          <img [src]="page.icon" alt="icon" *ngIf="!page.class">
+          <img [src]="page.icon1" alt="icon" *ngIf="page.class == 'active'">
+          {{page.name}}
+        </div>
+      </div>
+      <div class="menu-list" *ngIf="details">
+        <div id="accordion" class="accordion">
+          <div class="collapsed title" data-toggle="collapse" href="#collapseOne">
+            <a class="card-title "> <img src="assets/images/black/language.svg" style="height: 20px;margin-right: 8px;"> Language
+            </a>
+          </div>
+          <div id="collapseOne" class="collapse" data-parent="#accordion">
+            <p (click)="changeLanguage('en')" class="menu-list ml-3 mt-0 pl-0 english"><img src="assets/images/united-states.png" class="mr-2">{{details.English}}</p>
+            <p (click)="changeLanguage('es')" class="ml-3 mb-0"><img src="assets/images/spain.png" class="mr-2">{{details.Spanish}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-list" (click)="logOut()" *ngIf="details" style="border: none;">
+        <!-- <ion-img src="" class="mr-3"></ion-img> -->
+        <p> <img src="assets/images/black/logout.svg" style="margin-right: 16px;">{{details.LogOut}}</p>
+      </div>
+    </div>
+  </div>
+</ion-menu>
+<ion-router-outlet main id="content"></ion-router-outlet>

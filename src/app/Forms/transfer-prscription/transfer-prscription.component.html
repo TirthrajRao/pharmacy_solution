@@ -1,0 +1,224 @@
+<ion-header>
+  <app-header [cname]="formDetail.appName"></app-header>
+</ion-header>
+
+<ion-content class="roboto-miduim">
+  <div class="serivice-title">
+    <img src="assets/images/red/transfer.svg" class="icon">
+    <h4>{{formDetail.form1}}</h4>
+    <img src="assets/images/logo.png" class="logo-img ml-auto mr-2">
+  </div>
+  <div class=" medication-forms">
+    <div class="form-name">
+      <p class="mb-3 titles">{{formDetail.basicDetail}}</p>
+    </div>
+    <ul class="nav nav-tabs" role="tablist" style="border: none;">
+      <li role="presentation" class="active">
+        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" aria-expanded="true">
+
+        </a>
+      </li>
+      <li role="presentation" class="disabled">
+        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" aria-expanded="false">
+
+        </a>
+      </li>
+    </ul>
+    <form class="" [formGroup]="transferPrescriptionForm">
+      <div class="tab-content" id="main_form">
+        <div class="tab-pane active" role="tabpanel" id="step1">
+          <div class="form-group">
+            <input type="text" class="form-control" [placeholder]="formDetail.firstName" formControlName="first_name"
+              [(ngModel)]="currentUserData.first_name">
+            <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+              <div *ngIf="f.first_name.errors.required">{{formDetail.validation.fname}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" [placeholder]="formDetail.lastName" formControlName="last_name"
+              [(ngModel)]="currentUserData.last_name">
+            <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback">
+              <div *ngIf="f.last_name.errors.required">{{formDetail.validation.lname}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="email" class="form-control" [placeholder]="formDetail.email" formControlName="email"
+              [(ngModel)]="currentUserData.email">
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">{{formDetail.validation.email}}</div>
+              <div *ngIf="f.email.errors.email">{{formDetail.validation.email1}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="number" class="form-control" [placeholder]="formDetail.phone" formControlName="phone_number"
+              [(ngModel)]="currentUserData.phone_number">
+            <div *ngIf="submitted && f.phone_number.errors" class="invalid-feedback">
+              <div *ngIf="f.phone_number.errors.required">{{formDetail.validation.phone}}</div>
+            </div>
+          </div>
+
+          <div class="form-group" style="position: relative;">
+            <ion-datetime [placeholder]="formDetail.birthDate" max="{{curruntDate}}" formControlName="date_of_birth">
+            </ion-datetime>
+            <i class="fa fa-calendar-o date-icon" aria-hidden="true"></i>
+            <div *ngIf="submitted && f.date_of_birth.errors" class="invalid-feedback">
+              <div *ngIf="f.date_of_birth.errors.required">{{formDetail.validation.birthdate}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" [placeholder]="formDetail.city" formControlName="city">
+            <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+              <div *ngIf="f.city.errors.required">{{formDetail.validation.city}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" [placeholder]="formDetail.state" formControlName="state">
+            <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+              <div *ngIf="f.state.errors.required">{{formDetail.validation.state}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" [placeholder]="formDetail.zip" formControlName="zipcode">
+            <div *ngIf="submitted && f.zipcode.errors" class="invalid-feedback">
+              <div *ngIf="f.zipcode.errors.required">{{formDetail.validation.zipcode}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" [placeholder]="formDetail.pName" formControlName="pharmacy_name">
+            <div *ngIf="submitted && f.pharmacy_name.errors" class="invalid-feedback">
+              <div *ngIf="f.pharmacy_name.errors.required">{{formDetail.validation.pharmacyname}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="number" class="form-control" [placeholder]="formDetail.pPhnNo"
+              formControlName="pharmacy_number">
+            <div *ngIf="submitted && f.pharmacy_number.errors" class="invalid-feedback">
+              <div *ngIf="f.pharmacy_number.errors.required">{{formDetail.validation.pharmacynumber}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <textarea type="text" class="form-control" [placeholder]="formDetail.address"
+              formControlName="address"></textarea>
+            <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+              <div *ngIf="f.address.errors.required">{{formDetail.validation.address}}</div>
+            </div>
+          </div>
+          <ul class="list-inline pull-right submit-btn">
+            <li><button type="button" class="default-btn next-step btn"> Next </button></li>
+          </ul>
+        </div>
+        <div class="tab-pane" role="tabpanel" id="step2">
+          <div class="row rx-number m-0">
+            <label class="w-100 ">{{formDetail.heading2}}</label>
+            <div class="col-7 p-0 pr-2">
+              <input type="text" class="form-control" [placeholder]="formDetail.rx1" formControlName="mad_name_1">
+            </div>
+            <div class="col-5 p-0 pr-2">
+              <input type="text" class="form-control" placeholder="Rx 1 #" formControlName="mad_number_1">
+            </div>
+            <div class="col-7 p-0 pr-2">
+              <input type="text" class="form-control" [placeholder]="formDetail.rx2" formControlName="mad_name_2">
+            </div>
+            <div class="col-5 p-0 pr-2">
+              <input type="text" class="form-control" placeholder="Rx 2 #" formControlName="mad_number_2">
+            </div>
+            <div class="col-7 p-0 pr-2">
+              <input type="text" class="form-control" [placeholder]="formDetail.rx3" formControlName="mad_name_3">
+            </div>
+            <div class="col-5 p-0 pr-2">
+              <input type="text" class="form-control" placeholder="Rx 3 #" formControlName="mad_number_3">
+            </div>
+            <div class="col-7 p-0 pr-2">
+              <input type="text" class="form-control" [placeholder]="formDetail.rx4" formControlName="mad_name_4">
+            </div>
+            <div class="col-5 p-0 pr-2">
+              <input type="text" class="form-control" placeholder="Rx 4 #" formControlName="mad_number_4">
+            </div>
+            <div class="col-7 p-0 pr-2">
+              <input type="text" class="form-control" [placeholder]="formDetail.rx5" formControlName="mad_name_5">
+            </div>
+            <div class="col-5 p-0 pr-2">
+              <input type="text" class="form-control" placeholder="Rx5# " formControlName="mad_number_5">
+            </div>
+            <div class="col-7 p-0 pr-2">
+              <input type="text" class="form-control" [placeholder]="formDetail.rx6" formControlName="mad_name_6">
+            </div>
+            <div class="col-5 p-0 pr-2">
+              <input type="text" class="form-control" placeholder="Rx 6 #" formControlName="mad_number_6">
+            </div>
+            <div class="col-7 p-0 pr-2">
+              <input type="text" class="form-control" [placeholder]="formDetail.rx7" formControlName="mad_name_7">
+            </div>
+            <div class="col-5 p-0 pr-2">
+              <input type="text" class="form-control" placeholder="Rx 7 #" formControlName="mad_number_7">
+            </div>
+            <div class="col-7 p-0 pr-2">
+              <input type="text" class="form-control" [placeholder]="formDetail.rx8" formControlName="mad_name_8">
+            </div>
+            <div class="col-5 p-0 pr-2">
+              <input type="text" class="form-control" placeholder="Rx 8 #" formControlName="mad_number_8">
+            </div>
+            <div class="col-7 p-0 pr-2">
+              <input type="text" class="form-control" [placeholder]="formDetail.rx9" formControlName="mad_name_9">
+            </div>
+            <div class="col-5 p-0 pr-2">
+              <input type="text" class="form-control" placeholder="Rx 9 #" formControlName="mad_number_9">
+            </div>
+            <div class="col-7 p-0 pr-2">
+              <input type="text" class="form-control" [placeholder]="formDetail.rx10" formControlName="mad_name_10">
+            </div>
+            <div class="col-5 p-0 pr-2">
+              <input type="text" class="form-control" placeholder="Rx 10 #" formControlName="mad_number_10">
+            </div>
+          </div>
+          <div class="form-footer">
+            <ion-item lines="none">
+              <ion-label position="floating">
+                <i class="fa fa-calendar-o" aria-hidden="true"></i>   {{formDetail.reminder}}
+              </ion-label>
+              <ion-datetime display-timezone="utc" min="{{curruntDate}}" max="{{nextYear}}"
+                formControlName="refill_date">
+              </ion-datetime>
+            </ion-item>
+          </div>
+          <ul class="list-inline submit-btn float-right">
+            <li><button type="button" class="default-btn prev-step btn">Back</button></li>
+          </ul>
+          <div class="submit-btn">
+            <button class="btn" (click)="addTransferPresForm(transferPrescriptionForm.value)"
+              [disabled]="isDisable">{{formDetail.btnText}}</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div *ngIf="loading">
+    <div id="loader-wrapper">
+      <div class="heartbeatloader">
+        <div class="absCenter ">
+          <div class="loaderPill">
+            <div class="loaderPill-anim">
+              <div class="loaderPill-anim-bounce">
+                <div class="loaderPill-anim-flop">
+                  <div class="loaderPill-pill"></div>
+                </div>
+              </div>
+            </div>
+            <div class="loaderPill-floor">
+              <div class="loaderPill-floor-shadow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

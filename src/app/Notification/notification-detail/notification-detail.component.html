@@ -1,0 +1,43 @@
+<ion-header>
+  <app-header [cname]="details.title"></app-header>
+</ion-header>
+<ion-content>
+  <div *ngIf="notificationDetail">
+    <div class="roboto-miduim serivice-title">
+      <img src="assets/images/notification.png" class="icon">
+      <h4>{{details.title}}</h4>
+      <img src="assets/images/logo.png" class="logo-img ml-auto mr-2">
+    </div>
+    <div class="notification-detail">
+      <div class="notification-img image" >
+        <img src="{{notificationDetail.image}}" onError="src='assets/images/placeholder.png'" (load)="onImageLoad()">
+      </div>
+      <p class="notification-title">{{notificationDetail.title}}</p>
+      <div class="content" [innerHtml]="notificationDetail.message"></div>
+    </div>
+  </div>
+  <div *ngIf="loading">
+    <div id="loader-wrapper">
+      <div class="heartbeatloader">
+        <div class="absCenter ">
+          <div class="loaderPill">
+            <div class="loaderPill-anim">
+              <div class="loaderPill-anim-bounce">
+                <div class="loaderPill-anim-flop">
+                  <div class="loaderPill-pill"></div>
+                </div>
+              </div>
+            </div>
+            <div class="loaderPill-floor">
+              <div class="loaderPill-floor-shadow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <app-footer></app-footer>
+</ion-footer>

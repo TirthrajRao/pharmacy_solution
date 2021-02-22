@@ -1,0 +1,152 @@
+<ion-header>
+  <app-header [cname]="'Profile'"></app-header>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="editProfileForm" *ngIf="userData" class="p-3">
+    <div class="card">
+      <div class="card_body">
+        <ion-card>
+          <ion-card-content>
+            <div class="user_detail float-left">
+              <small>{{formDetails.firstName}}</small>
+              <div>
+                <ion-item>
+                  <ion-input type="text" formControlName="first_name"
+                    ngModel="{{userData.first_name ? userData.first_name : ''}}">
+                  </ion-input>
+                </ion-item>
+              </div>
+              <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+                <div *ngIf="f.first_name.errors.required">{{formDetails.validation.fname}}</div>
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+        <ion-card>
+          <ion-card-content>
+            <div class="user_detail float-left">
+              <small>{{formDetails.lastName}}</small>
+              <div>
+                <ion-item>
+                  <ion-input type="text" formControlName="last_name"
+                    ngModel="{{userData.last_name ? userData.last_name : ''}}">
+                  </ion-input>
+                </ion-item>
+              </div>
+              <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback">
+                <div *ngIf="f.last_name.errors.required">{{formDetails.validation.lname}}</div>
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+        <ion-card>
+          <ion-card-content>
+            <div class="user_detail float-left">
+              <small>{{formDetails.email}}</small>
+              <div>
+                <ion-item>
+                  <ion-input type="text" formControlName="email" ngModel="{{userData.email ? userData.email : ''}}">
+                  </ion-input>
+                </ion-item>
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                  <div *ngIf="f.email.errors.required">{{formDetails.validation.email}}</div>
+                  <div *ngIf="f.email.errors.email">{{formDetails.validation.email1}}</div>
+                </div>
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+        <ion-card>
+          <ion-card-content>
+            <div class="user_detail float-left">
+              <small>{{formDetails.phone}}</small>
+              <div>
+                <ion-item>
+                  <ion-input type="text" formControlName="phone_number"
+                    ngModel="{{userData.phone_number ? userData.phone_number : ''}}">
+                  </ion-input>
+                </ion-item>
+              </div>
+              <div *ngIf="submitted && f.phone_number.errors" class="invalid-feedback">
+                <div *ngIf="f.phone_number.errors.required">{{formDetails.validation.phone}}</div>
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+
+        <div class="reset-link">
+          <a class="float-right" id="reset-password" (click)="openRedetPswModal()">{{formDetails.resetPsw}}</a>
+        </div>
+      </div>
+    </div>
+    <div class="submit-btn mt-4">
+      <button (click)="editUserProfile(editProfileForm.value)" class="btn" [disabled]="isDisable">{{formDetails.btnText1}}</button>
+    </div>
+  </form>
+
+  <div *ngIf="loading">
+    <div id="loader-wrapper">
+      <div class="heartbeatloader">
+        <div class="absCenter ">
+          <div class="loaderPill">
+            <div class="loaderPill-anim">
+              <div class="loaderPill-anim-bounce">
+                <div class="loaderPill-anim-flop">
+                  <div class="loaderPill-pill"></div>
+                </div>
+              </div>
+            </div>
+            <div class="loaderPill-floor">
+              <div class="loaderPill-floor-shadow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- reset password modal  -->
+  <div class="modal_content_with_overlay" id="reset-password-modal" style="display: none;">
+    <div class="modal_body">
+      <div class="modal_content">
+        <h5 class="titles">{{formDetails.resetPsw}}</h5>
+        <form [formGroup]="resetPswForm">
+          <div class="form-group">
+            <ion-item>
+              <ion-label position="floating">{{formDetails.old}}</ion-label>
+              <ion-input type="password" formControlName="old_password"></ion-input>
+            </ion-item>
+            <div *ngIf="submitted1 && f1.old_password.errors" class="invalid-feedback">
+              <div *ngIf="f1.old_password.errors.required">{{formDetails.validation.old}}</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <ion-item>
+              <ion-label position="floating">{{formDetails.new}}</ion-label>
+              <ion-input type="password" formControlName="new_password"></ion-input>
+            </ion-item>
+            <div *ngIf="submitted1 && f1.new_password.errors" class="invalid-feedback">
+              <div *ngIf="f1.new_password.errors.required">{{formDetails.validation.new}}</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <ion-item>
+              <ion-label position="floating">{{formDetails.confirm}}</ion-label>
+              <ion-input type="password" (ionChange)="comparePassword(resetPswForm)" id="confirmPassword"
+                formControlName="conform_password"></ion-input>
+            </ion-item>
+            <div *ngIf="submitted1 && f1. conform_password.errors" class="invalid-feedback">
+              <div *ngIf="f1. conform_password.errors.required"> {{formDetails.validation.password}}</div>
+            </div>
+            <span id="message" [style.color]="match?'green':'red'" style="font-size: 13px;"></span>
+          </div>
+          <div class="submit-btn">
+            <button type="submit" class=" btn" (click)="resetPassWord(resetPswForm.value)"
+              [disabled]="isDisable">{{formDetails.btnText}}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</ion-content>

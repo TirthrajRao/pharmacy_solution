@@ -1,0 +1,116 @@
+<!-- <ion-header>
+  <app-header [cname]="'Employment'"></app-header>
+</ion-header> -->
+<ion-header>
+  <div class="header d-flex">
+    <div class="back-icon float-left">
+      <ion-back-button [icon]="'arrow-back-outline'" [text]="">
+      </ion-back-button>
+    </div>
+    <div class="menu-icon float- ml-auto">
+      <ion-menu-button>
+      </ion-menu-button>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content class="service-detail">
+
+  <div class="about-img">
+    <img src="assets/images/carrer.jpg">
+  </div>
+  <div class="servicename-card" >
+    <p class="card-title m-0 mt-2">{{details.title}}</p>
+    <p class="des m-0">{{details.subTitle}}</p>
+  </div>
+  <div class="form medication-forms">
+    <div class="form-name">
+      <p class="mb-3 titles">{{formDetail.basicDetail}}</p>
+    </div>
+    <form [formGroup]="employmentForm">
+      <div class="form-group">
+        <input type="text" class="form-control" [placeholder]="formDetail.firstName" formControlName="first_name"
+          [(ngModel)]="currentUserData.first_name">
+        <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+          <div *ngIf="f.first_name.errors.required">{{formDetail.validation.fname}}</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input type="text" class="form-control" [placeholder]="formDetail.lastName" formControlName="last_name"
+          [(ngModel)]="currentUserData.last_name">
+        <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback">
+          <div *ngIf="f.last_name.errors.required">{{formDetail.validation.lname}}</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input type="email" class="form-control" [placeholder]="formDetail.email" formControlName="email"
+          [(ngModel)]="currentUserData.email">
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">{{formDetail.validation.email}}</div>
+          <div *ngIf="f.email.errors.email">{{formDetail.validation.email1}}</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input type="number" class="form-control" [placeholder]="formDetail.phone" formControlName="phone_number"
+          [(ngModel)]="currentUserData.phone_number">
+        <div *ngIf="submitted && f.phone_number.errors" class="invalid-feedback">
+          <div *ngIf="f.phone_number.errors.required">{{formDetail.validation.phone}}</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input type="number" class="form-control" [placeholder]="formDetail.mobile" formControlName="mobile_number">
+        <div *ngIf="submitted && f.mobile_number.errors" class="invalid-feedback">
+          <div *ngIf="f.mobile_number.errors.required">{{formDetail.validation.mobile}}</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input type="text" class="form-control" [placeholder]="formDetail.position" formControlName="position"
+          formControlName="position_apply">
+        <div *ngIf="submitted && f.position_apply.errors" class="invalid-feedback">
+          <div *ngIf="f.position_apply.errors.required">{{formDetail.validation.position}}</div>
+        </div>
+      </div>
+
+      <div class="form-group mb-4">
+        <textarea type="text" class="form-control" [placeholder]="formDetail.message"
+          formControlName="message"></textarea>
+      </div>
+
+      <div class="form-group file-select">
+        <input type="file" #file (change)="selectFile($event)" hidden>
+        <span (click)="file.click()">{{formDetail.attach}}</span>
+        <p *ngIf="fileName" class="mt-2">{{fileName}}</p>
+      </div>
+
+      <div class="submit-btn mt-4">
+        <button class="btn " [disabled]="isDisable"
+          (click)="addEmploymentForm(employmentForm.value)">{{formDetail.btnText}}</button>
+      </div>
+    </form>
+  </div>
+  <div *ngIf="loading">
+    <div id="loader-wrapper">
+      <div class="heartbeatloader">
+        <div class="absCenter ">
+          <div class="loaderPill">
+            <div class="loaderPill-anim">
+              <div class="loaderPill-anim-bounce">
+                <div class="loaderPill-anim-flop">
+                  <div class="loaderPill-pill"></div>
+                </div>
+              </div>
+            </div>
+            <div class="loaderPill-floor">
+              <div class="loaderPill-floor-shadow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
