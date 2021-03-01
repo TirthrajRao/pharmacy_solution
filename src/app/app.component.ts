@@ -57,7 +57,7 @@ export class AppComponent {
     })
 
     this.initializeApp();
-    this.router.navigate(['/home'])
+    // this.router.navigate(['/home'])
   }
 
   initializeApp() {
@@ -181,7 +181,7 @@ export class AppComponent {
       console.log("in if");
       const data = {
         notification_id: 1,
-        title: "Hi!! From Guy Park Pharmacy",
+        title: "Hi!! From Your Pharmacy",
         body: "Please visit our store for best Pharmacy Services",
         image: "https://i.ibb.co/v4k20BW/guy-park.png",
         // attachments:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQu_fpPmbK-bebEeX036y7frmW06amtCkG1ew&usqp=CAU'

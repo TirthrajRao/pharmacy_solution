@@ -27,10 +27,13 @@ import { NotificationComponent } from '../Notification/notification/notification
 import { HippaNoticeComponent } from '../hippa-notice/hippa-notice.component';
 import { NotificationDetailComponent } from '../Notification/notification-detail/notification-detail.component';
 import { ProfileComponent } from '../profile/profile.component';
+import { MatTableModule } from '@angular/material/table';
 
+import { AES256 } from '@ionic-native/aes-256/ngx';
 
 import * as Hammer from 'hammerjs';
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import { HistoryComponent } from '../history/history.component';
 
 export class MyHammerConfig extends HammerGestureConfig {
 
@@ -52,7 +55,9 @@ export class MyHammerConfig extends HammerGestureConfig {
     IonicModule,
     HomePageRoutingModule,
     ReactiveFormsModule,
+    MatTableModule
   ],
+  entryComponents: [HistoryComponent],
   declarations: [
     HomePage,
     HomePageComponent,
@@ -75,13 +80,15 @@ export class MyHammerConfig extends HammerGestureConfig {
     NotificationComponent,
     NotificationDetailComponent,
     HippaNoticeComponent,
-    ProfileComponent
+    ProfileComponent,
+    HistoryComponent
   ],
-  providers:[
+  providers: [
     {
       provide: HAMMER_GESTURE_CONFIG,
       useClass: MyHammerConfig
-    }
+    },
+    AES256
   ]
 })
 export class HomePageModule { }

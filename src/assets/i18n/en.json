@@ -1,6 +1,6 @@
 {
 	"home": {
-		"headerTitle": "Guy Park Pharmacy",
+		"headerTitle": "Your Pharmacy",
 		"serviceOptionTitle": "Medication Options",
 		"TransferPrescripsion": "Transfer Prescription",
 		"RefillRequest": "Refill Request",
@@ -10,7 +10,8 @@
 		"explore": "All Kind Of Care",
 		"allServices": "All Services",
 		"title": "About Us",
-		"subTitle": "Engendering Resplendent Life"
+		"subTitle": "Engendering Resplendent Life",
+		"vaccineRequest": "Vaccine Request"
 	},
 	"sidemenu": {
 		"Home": "Home",
@@ -24,7 +25,12 @@
 		"LogOut": "Log Out",
 		"English": "English",
 		"Spanish": "Spanish",
-		"Profile":"Profile"
+		"Profile":"Profile",
+		"History": "History",
+		"Refill_Request": "Refill request",
+		"Transfer_Prescription": "Transfer prescription",
+		"Price_Check": "Price check",
+		"Vaccine_Request": "Vaccine request"
 	},
 	"services": {
 		"headerTitle": "Our Services",
@@ -37,19 +43,19 @@
 		"service5": "$4.99 Generic Drug Plan",
 		"service6": "Accept All Major Insurance Plans",
 		"content1": "E-Prescribing supports a shift to a paperless for prescribes, payers and pharmacists to make better medication management decisions.",
-		"content2": "Guy Park Pharmacy provide specialty packing the top of each individual pack. It lists the person's name, the medication within and the time it should be taken.",
+		"content2": "Your Pharmacy provide specialty packing the top of each individual pack. It lists the person's name, the medication within and the time it should be taken.",
 		"content3": "Curbside delivery to prevent our patients from potential exposure to illness and reduce the number of people visiting our campus.",
-		"content4": "It’s convenient and it’s FREE. Ask for your orders to be delivered at your home or office. Send your requests to Guy Park Pharmacy.",
-		"content5": "Make Guy Park Pharmacy your pharmacy of choice and save! Our prescription savings offers prescription deals, inexpensive prescriptions and general pharmacy savings. Hundreds of generic medications are available at greatly discounted prices $4.99 Generic Drug Plan for a 30-day supply.",
-		"content6": "Guy Park Pharmacy accepts all major insurance plans. We also help you find more economical solutions using generics or competitive drug companies and Insurance advice."
+		"content4": "It’s convenient and it’s FREE. Ask for your orders to be delivered at your home or office. Send your requests to Your Pharmacy.",
+		"content5": "Make Your Pharmacy your pharmacy of choice and save! Our prescription savings offers prescription deals, inexpensive prescriptions and general pharmacy savings. Hundreds of generic medications are available at greatly discounted prices $4.99 Generic Drug Plan for a 30-day supply.",
+		"content6": "Your Pharmacy accepts all major insurance plans. We also help you find more economical solutions using generics or competitive drug companies and Insurance advice."
 	},
 	"curbside": {
 		"title": "Curbside Delivery",
 		"subTitle": "All kind of Care",
-		"contentTitle": "Guy Park Pharmacy",
-		"content1": "provide curbside delivery to prevent our patients from potential exposure to illness and reduce the number of people visiting our campus, Guy Park Pharmacy is providing free prescription delivery services to our patients’ households.",
-		"content2": "Patients may call the Guy Park Pharmacy at 518-212-6020 to request this service and make appropriate arrangements. For those patients who would like to utilize curbside delivery at the Pharmacy, they are welcome to park at the curb closest to the Pharmacy and call 518-212-6020 for a curbside delivery of their prescription(s).",
-		"content3": "Over-the-counter Pharmacy items are also available with curbside and home delivery services. Community members may call the Guy Park Pharmacy at 518-212-6020for any questions regarding these services"
+		"contentTitle": "Your Pharmacy",
+		"content1": "provide curbside delivery to prevent our patients from potential exposure to illness and reduce the number of people visiting our campus, Your Pharmacy is providing free prescription delivery services to our patients’ households.",
+		"content2": "Patients may call the Your Pharmacy at 518-212-6020 to request this service and make appropriate arrangements. For those patients who would like to utilize curbside delivery at the Pharmacy, they are welcome to park at the curb closest to the Pharmacy and call 518-212-6020 for a curbside delivery of their prescription(s).",
+		"content3": "Over-the-counter Pharmacy items are also available with curbside and home delivery services. Community members may call the Your Pharmacy at 518-212-6020for any questions regarding these services"
 	},
 	"eScribe": {
 		"title": "E-Prescriptions",
@@ -60,7 +66,7 @@
 		"list2": "Improve Patient Safety",
 		"list3": "Increase Efficiency",
 		"list4": "Reduce wait time at pharmacy",
-		"content2": "By using a computer or handheld device with e-prescribing software, prescribers can electronically access patient prescription benefit information and patient medication history, and route prescriptions electronically to Guy Park Pharmacy.",
+		"content2": "By using a computer or handheld device with e-prescribing software, prescribers can electronically access patient prescription benefit information and patient medication history, and route prescriptions electronically to Your Pharmacy.",
 		"content3": "E-Prescription is helpful for our customers, who are always on the go and might not have the time to have their prescriptions filled traditionally."
 	},
 	"speciality": {
@@ -78,13 +84,13 @@
 	"drug": {
 		"title": "$4.99 Generic Drug Plan",
 		"subTitle": "All kind of Care",
-		"contentTitle": "Guy Park Pharmacy",
-		"content1": "Make Guy Park Pharmacy your pharmacy of choice and save! Our prescription savings offers prescription deals, inexpensive prescriptions and general pharmacy savings. Hundreds of generic medications are available at greatly discounted prices $4.99 Generic Drug Plan for a 30-day supply."
+		"contentTitle": "Your Pharmacy",
+		"content1": "Make Your Pharmacy your pharmacy of choice and save! Our prescription savings offers prescription deals, inexpensive prescriptions and general pharmacy savings. Hundreds of generic medications are available at greatly discounted prices $4.99 Generic Drug Plan for a 30-day supply."
 	},
 	"major": {
 		"title": "Insurance Plan",
 		"subTitle": "All kind of Care",
-		"contentTitle": "Guy Park Pharmacy",
+		"contentTitle": "Your Pharmacy",
 		"content1": "accepts all major insurance plans such as:",
 		"list1": "Aetna",
 		"list2": "Blue Cross & Blue Shield",
@@ -109,8 +115,15 @@
 	"notification": {
 		"title": "Notification"
 	},
+	"history": {
+		"History": "History",
+		"Refill_Request": "Refill request",
+		"Transfer_Prescription": "Transfer prescription",
+		"Price_Check": "Price check",
+		"Vaccine_Request": "Vaccine request"
+	},
 	"form": {
-		"appName": "Guy Park Pharmacy",
+		"appName": "Your Pharmacy",
 		"form1": "Transfer a Prescription",
 		"form2": "Refill Request",
 		"form3": "Price Check",
@@ -196,7 +209,7 @@
 		"subTitle": "Engendering Resplendent Life",
 		"contentTitle1": "We are well equipped with Spanish verbalizing staff",
 		"subTitle1": "A pharmacy for all of your needs.",
-		"content1": "Guy Park Pharmacy is an independent community pharmacy in Amsterdam New York, serving the surrounding locations with pharmacy services.",
+		"content1": "Your Pharmacy is an independent community pharmacy in Amsterdam New York, serving the surrounding locations with pharmacy services.",
 		"contentTitle2": "Our Mission",
 		"content2": "Our Mission is to Optimize health care services by providing caring and convenient pharmacy experience to better manage a patient’s health and well being.",
 		"content3": "As independent pharmacy, we take the time to deliver a higher level of personal attention, trusted advice that our patients may not find in chain pharmacies. With each visit, you will discover award winning quality service from a pharmacist who knows you by your name-not just by number.",
@@ -211,11 +224,11 @@
 		"subTitle": "You can locate us on Nearby Location",
 		"contentTitle1": "We are available at Following location",
 		"location": "Location",
-		"name": "Guy Park Pharmacy",
-		"address1": "151 Guy Park Ave,",
+		"name": "Your Pharmacy",
+		"address1": "151 Your Ave,",
 		"address2":"Amsterdam, New York 12010",
 		"country":"USA",
-		"email": "guyparkpharmacy@gmail.com",
+		"email": "yourpharmacy@gmail.com",
 		"phone": "518-212-6020",
 		"Phone": "Phone",
 		"Fax":"Fax"
@@ -229,7 +242,7 @@
 		"subTitle": "Hippa Notice OF Privacy Practices",
 		"contentTitle1": "This Notice Describes How Medical Information About You May Be Used And  Disclosed And How You Can Get Access To This Information.",
 		"contentTitle2": "Please Review It Carefully.",
-		"content1": "When this Notice of Privacy Practices (“Notice”) refers to “we” or “us,” it is referring to Guy Park Pharmacy and all of the pharmacists who provide health care services and the employees of our pharmacy.",
+		"content1": "When this Notice of Privacy Practices (“Notice”) refers to “we” or “us,” it is referring to Your Pharmacy and all of the pharmacists who provide health care services and the employees of our pharmacy.",
 		"content2": "We are required by law to maintain the privacy of your protected health information (“PHI”), to follow the terms of the Notice currently in effect, to give you this Notice setting forth our legal duties and privacy practices concerning your PHI and to notify affected individuals following a breach of unsecured PHI.",
 		"content3": "This Notice describes how we may use and disclose your PHI. Additionally, this Notice explains the rights you have with respect to your PHI, and certain obligations we must abide by in accordance with the law.",
 		"content4": "We reserve the right to amend this Notice. If we make any material revisions to this Notice, we will post a copy of the revised Notice in the pharmacy, on our website and will offer you a copy of the revised Notice.",

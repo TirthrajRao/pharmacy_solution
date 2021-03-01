@@ -25,6 +25,10 @@ import { HTTP } from '@ionic-native/http/ngx';
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { BackgroundMode } from '@ionic-native/background-mode/ngx';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { MatTableModule } from '@angular/material/table';
+
+
 
 import { AngularFireModule } from '@angular/fire';
 import {
@@ -36,6 +40,8 @@ import { environment } from './../environments/environment';
 import * as Hammer from 'hammerjs';
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { SignInWithApple } from '@ionic-native/sign-in-with-apple/ngx';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule, DatePipe } from '@angular/common';
 
 export class MyHammerConfig extends HammerGestureConfig {
 
@@ -64,6 +70,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   entryComponents: [],
   imports: [
     BrowserModule,
+    CommonModule,
     HttpClientModule,
     HammerModule,
     TranslateModule.forRoot({
@@ -80,7 +87,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxDatatableModule,
+    BrowserAnimationsModule,
+    MatTableModule
   ],
   providers: [
     StatusBar,
@@ -90,10 +100,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     FCM,
     LoginGuard,
     HTTP,
-    Geolocation ,
+    Geolocation,
     LocalNotifications,
     BackgroundMode,
     SignInWithApple,
+    DatePipe,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     {
       provide: HAMMER_GESTURE_CONFIG,

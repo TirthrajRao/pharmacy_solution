@@ -20,6 +20,7 @@ import { NotificationComponent } from '../Notification/notification/notification
 import { HippaNoticeComponent } from '../hippa-notice/hippa-notice.component';
 import { NotificationDetailComponent } from '../Notification/notification-detail/notification-detail.component';
 import { ProfileComponent } from '../profile/profile.component';
+import { HistoryComponent } from '../history/history.component';
 
 const routes: Routes = [
   {
@@ -31,7 +32,10 @@ const routes: Routes = [
         redirectTo: 'home-page',
         pathMatch: 'full'
       },
-
+      {
+        path: "history",
+        component: HistoryComponent
+      },
       {
         path: 'home-page',
         component: HomePageComponent

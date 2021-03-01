@@ -179,6 +179,32 @@
     </form>
   </div>
 
+  <ion-list class="commentSection ion-margin-bottom" *ngIf="comments && comments.length">
+    <ion-item>
+      <ion-label class="text-center mt-0" style="color: #033295d6;" >Comments</ion-label>
+    </ion-item>
+    <ion-item class="comment-wrapper" *ngFor="let comment of comments; let i = index">
+      <ion-label class="comment_date">
+        <!-- {{getTimeStamp(comment.comment_date)}} -->
+        {{comment.comment_date}}
+      </ion-label>
+      <ion-label class="comment-title">
+        {{ currentUser.id == comment.user_id ? "Me" : "Admin"}}
+      </ion-label>
+      <ion-label class="mt-16 comment-data" color="black">{{comment.comment_content}}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-card style="margin: 10px 0;" *ngIf="comments && comments.length">
+    <ion-list>
+      <ion-item>
+        <ion-textarea [(ngModel)]="newComment" placeholder="Comment here..."></ion-textarea>
+      </ion-item>
+    </ion-list>
+    <ion-button (click)="postComment()" expand="block" class="ion-padding-horizontal ion-margin-bottom" [disabled]="!newComment">
+      Comment
+    </ion-button>
+  </ion-card>
+
   <div *ngIf="loading">
     <div id="loader-wrapper">
       <div class="heartbeatloader">

@@ -52,3 +52,60 @@ ion-content {
         }
     }
 }
+
+
+.commentSection {
+    width: 100%;
+    max-height: 50vh;
+    overflow-x: scroll;
+    ion-label {
+        margin-bottom: 0;
+    }
+    
+    ion-item::part(native) {
+        
+        padding: 0 16px 0 16px;
+    }
+
+
+    .comment-wrapper::part(native) {
+        align-items: flex-end;
+        padding: 0 16px 0 16px;
+    }
+    ion-item {
+        position: relative;
+    }
+    
+    .comment-title {
+        color: #033295d6;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        /* margin-bottom: 5px; */
+        font-size: 11px;
+        margin-top: 5px;
+    }
+
+    .comment_date{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        text-align: right;
+        margin-top: 5px;
+        font-size: 11px;
+        // padding-right: 7px;
+        color: #033295d6;
+    }
+
+    .comment-data {
+        text-overflow: unset !important;
+        white-space: unset !important;
+        overflow: unset !important;
+        margin-top: 25px;
+        
+    }
+}

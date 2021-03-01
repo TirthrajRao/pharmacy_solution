@@ -279,6 +279,12 @@ export class UserService {
 
   }
 
+  // Get history data
+
+  getHistoryData(userId){
+    return this.http.get(config.baseApiUrl + `user_forms/get?user_id=${userId}`);
+  }
+
   /**
   * reset password
   * @param {objct} data 
@@ -469,7 +475,7 @@ export class UserService {
       let data = {
         "to": deviceToken,
         "notification": {
-          "title": "Hi!! From Guy Park Pharmacy",
+          "title": "Hi!! From Your Pharmacy",
           "body": "Please visit our store for best Pharmacy Services",
           image: "https://i.ibb.co/v4k20BW/guy-park.png"
         },

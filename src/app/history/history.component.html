@@ -1,0 +1,111 @@
+<ion-header>
+  <ion-toolbar class="toolbar-color1">
+    <div class="menu d-flex">
+      <div class="menu-icon float-right ml-auto">
+        <ion-back-button class=" text-white" defaultHref="/">
+        </ion-back-button>
+      </div>
+      <ion-title class="text-center">{{details.History}}</ion-title>
+      <div class="menu-icon float-right ml-auto">
+        <ion-menu-button class=" text-white">
+        </ion-menu-button>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment [(ngModel)]="selectedTab" (ionChange)="selectedTabChange($event.detail.value)">
+    <ion-segment-button value="Refill_Request">
+      <ion-label>{{details.Refill_Request}}</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Transfer_Prescription">
+      <ion-label>{{details.Transfer_Prescription}}</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Price_Check">
+      <ion-label>{{details.Price_Check}}</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Vaccine_Request">
+      <ion-label>{{details.Vaccine_Request}}</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div class="mt-5" [hidden]="dataSource && dataSource.data.length <= 0">
+
+    
+    <div class="table ion-padding-horizontal">
+
+      <table class="mat-elevation-z8 table-responsive" mat-table matPaginator [dataSource]="dataSource" matSort>
+        <span *ngFor="let colunm of displayedColumns; let i = index">
+          <ng-container matColumnDef="{{colunm}}" *ngIf="i < displayedColumns.length">
+            <th class="text-uppercase" mat-header-cell *matHeaderCellDef mat-sort-header="{{colunm}}"><b>{{colunm}}</b>
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element[colunm] == false ? '-' : element[colunm]}} </td>
+          </ng-container>
+
+          
+        </span>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row (click)="getFormData(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <!-- <mat-paginator (page)="onPaginateChange($event)" [length]="historyData.length" [pageSize]="5"
+        [pageSizeOptions]="[5, 10, 25, 100]">
+      </mat-paginator> -->
+    </div>
+  </div>
+
+  <div class="mt-5 text-center" [hidden]="dataSource && dataSource.data.length > 0">
+    <h2>{{displayMsg}}</h2>
+  </div>
+
+
+  <!-- <ion-list class="ion-no-padding">
+    <ion-item>
+      <ion-label class="text-center toolbar-color1"><b class="">Comment Section</b></ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Item Avatar</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Mega Man X</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>The Legend of Zelda</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Pac-Man</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Super Mario World</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-textarea placeholder="Enter more information here..."></ion-textarea>
+    </ion-item>
+  </ion-list> -->
+
+
+
+  <div *ngIf="loading">
+    <div id="loader-wrapper">
+      <div class="heartbeatloader">
+        <div class="absCenter ">
+          <div class="loaderPill">
+            <div class="loaderPill-anim">
+              <div class="loaderPill-anim-bounce">
+                <div class="loaderPill-anim-flop">
+                  <div class="loaderPill-pill"></div>
+                </div>
+              </div>
+            </div>
+            <div class="loaderPill-floor">
+              <div class="loaderPill-floor-shadow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

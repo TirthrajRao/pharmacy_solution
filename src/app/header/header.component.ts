@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +11,15 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
+    
     console.log("cname", this.componantName)
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
+    
+    
   }
 
 }

@@ -14,6 +14,20 @@
         </div>
       </div>
       <div class="menu-list" *ngIf="details">
+        <div id="accordion-history" class="accordion">
+          <div class="collapsed title" data-toggle="collapse" href="#collapseOne-history">
+            <a class="card-title"> <img src="assets/images/history.png" style="height: 20px;margin-right: 8px;"> {{details.History}}
+            </a>
+          </div>
+          <div id="collapseOne-history" class="collapse" data-parent="#accordion-history">
+            <p (click)="navigateHistory('Refill_Request')" class="menu-list ml-3 mt-0 pl-0 english"><img src="assets/images/refill.png" class="mr-2">{{details.Refill_Request}}</p>
+            <p (click)="navigateHistory('Transfer_Prescription')" class="menu-list ml-3 mt-0 pl-0 english"><img src="assets/images/tansfer.png" class="mr-2">{{details.Transfer_Prescription}}</p>
+            <p (click)="navigateHistory('Price_Check')" class="menu-list ml-3 mt-0 pl-0 english"><img src="assets/images/price_check.png" class="mr-2">{{details.Price_Check}}</p>
+            <p (click)="navigateHistory('Vaccine_Request')" class="ml-3 mb-0"><img src="assets/images/vaccine.png" class="mr-2">{{details.Vaccine_Request}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="menu-list" *ngIf="details">
         <div id="accordion" class="accordion">
           <div class="collapsed title" data-toggle="collapse" href="#collapseOne">
             <a class="card-title "> <img src="assets/images/black/language.svg" style="height: 20px;margin-right: 8px;"> Language
@@ -26,9 +40,32 @@
         </div>
       </div>
 
+
+
       <div class="menu-list" (click)="logOut()" *ngIf="details" style="border: none;">
         <!-- <ion-img src="" class="mr-3"></ion-img> -->
         <p> <img src="assets/images/black/logout.svg" style="margin-right: 16px;">{{details.LogOut}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="loading">
+    <div id="loader-wrapper">
+      <div class="heartbeatloader">
+        <div class="absCenter ">
+          <div class="loaderPill">
+            <div class="loaderPill-anim">
+              <div class="loaderPill-anim-bounce">
+                <div class="loaderPill-anim-flop">
+                  <div class="loaderPill-pill"></div>
+                </div>
+              </div>
+            </div>
+            <div class="loaderPill-floor">
+              <div class="loaderPill-floor-shadow"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

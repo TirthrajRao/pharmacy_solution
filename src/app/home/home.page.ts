@@ -15,7 +15,7 @@ export class HomePage {
   menuPages: any;
   details: any;
   language: any = localStorage.getItem('language');
-
+  loading: boolean = false;
   constructor(
     public menu: MenuController,
     public router: Router,
@@ -45,6 +45,8 @@ export class HomePage {
   }
 
   createMenu() {
+    console.log("This.details ==>", this.details);
+    
     this.menuPages = [
       {
         name: this.details.Home,
@@ -121,10 +123,14 @@ export class HomePage {
    * log out
    */
   logOut() {
+    this.loading = true;
+    this.menu.close();
     this._userService.logOut().then((res: any) => {
       console.log("in home page logout",res)
+      this.loading = false;
       this.router.navigate(['/login'])
     }).catch((err) => {
+      this.loading = false;
       this.appcomponent.errorAlert()
     });
   }
@@ -136,6 +142,8 @@ export class HomePage {
       this._translate.use(this.language);
       console.log("in home page", this._translate.instant("sidemenu"));
       this.details = this._translate.instant("sidemenu");
+      console.log(this.details);
+      
       this.createMenu();
     }, 250);
   }
@@ -163,5 +171,18 @@ export class HomePage {
     }).catch((err) => {
       console.log(err);
     })
+  }
+
+
+  // Navigate to history page
+  navigateHistory(params){
+    console.log(params);
+    this.menu.close();
+    this.router.navigate(["/home/history"] , {
+      queryParams: {
+        selectedTab: params
+      }
+    });
+    
   }
 }

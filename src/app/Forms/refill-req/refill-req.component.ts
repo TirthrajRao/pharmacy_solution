@@ -5,7 +5,7 @@ import { UserService } from '../../services/user.service';
 import * as moment from 'moment';
 import { FormService } from '../../services/form.service';
 import { AppComponent } from '../../app.component';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 declare const $: any;
 @Component({
   selector: 'app-refill-req',
@@ -23,14 +23,17 @@ export class RefillReqComponent implements OnInit {
   language: string = localStorage.getItem('language');
   currentUserData = JSON.parse(localStorage.getItem('userFormData'));
   loading: Boolean = false;
-
-
+  formData: any;
+  currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  comments: unknown;
+  newComment:any = '';
   constructor(
     private _translate: TranslateService,
     public _userService: UserService,
     public _formService: FormService,
     public appComponant: AppComponent,
-    public router: Router
+    public router: Router,
+    public route: ActivatedRoute
   ) {
     this.nextYearCount();
 
@@ -62,6 +65,22 @@ export class RefillReqComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.route.queryParams.subscribe((params) => {
+      if(params.form_data){
+        this.formData = JSON.parse(params.form_data);
+        console.log(this.formData);
+        
+        this.getComments();
+        for (const key in this.formData) {
+          if (key !== 'post_id') {
+            console.log(this.refillReqForm.controls)
+            this.refillReqForm.controls[key].setValue(this.formData[key]);
+          }
+        }
+      }
+    });
+
     this._userService.languageChanges().subscribe((res: any) => {
       console.log("RESPONSE", res);
       this.language = res.language
@@ -161,4 +180,46 @@ export class RefillReqComponent implements OnInit {
       this.formDetail = this._translate.instant("form")
     }, 250);
   }
+
+  getComments() {
+    
+
+    let url = `refill_request_comment/get?user_id=${this.currentUser.id}?post_id=${this.formData.post_id}`;
+    this._formService.getComments(url).then((res) => {
+      console.log(res);
+      this.comments = res;
+      this.loading =false
+    })
+    .catch((err) => {
+      console.log(err);
+      
+    });
+  }
+
+
+  postComment(){
+    console.log(this.newComment);
+
+    let obj = {
+      comment_post_ID : this.formData.post_id,
+      comment_parent: this.currentUser.id,
+      comment: this.newComment,
+      author_name: `${this.formData.first_name} ${this.formData.last_name}`,
+      author_email: this.formData.email
+      
+    }
+    this.newComment = ''
+    let url = "refill_request_comment/create"
+    this.loading = true;
+    this._formService.postComment(obj, url).then((res) => {
+      console.log(res);
+      this.getComments();
+    })
+    .catch((err) => {
+      console.log(err);
+      
+    });
+    
+  }
+
 }

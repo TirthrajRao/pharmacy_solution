@@ -153,4 +153,59 @@ export class FormService {
       }
     })
   }
+
+
+  // Get comments 
+  getComments(string){
+    return new Promise((resolve, reject) => {
+      if (!this.platform.is('ios')) {
+        this.http.get(config.baseApiUrl + string).subscribe((res) => {
+          resolve(res)
+        }, err => {
+          reject(err)
+        });
+      } else {
+        this.HTTP.get(config.baseApiUrl + string, {}, {}).
+          then((user) => {
+            const res = user.data;
+            return JSON.parse(res)
+          }).then((jsonRes) => {
+            if (jsonRes) {
+              resolve(jsonRes);
+            }
+          }).catch((err) => {
+            reject(err);
+          });
+      }
+    })
+  }
+
+  // Post comments
+  postComment(obj, url){
+    return new Promise((resolve, reject) => {
+      if (!this.platform.is('ios')) {
+        this.http.post(config.baseApiUrl + url, obj).subscribe((res) => {
+          resolve(res)
+        }, err => {
+          reject(err)
+        });
+      } else {
+        this.HTTP.post(config.baseApiUrl + url, obj, {}).
+          then((user) => {
+            const res = user.data;
+            return JSON.parse(res)
+          }).then((jsonRes) => {
+            if (jsonRes) {
+              resolve(jsonRes);
+            }
+          }).catch((err) => {
+            reject(err);
+          });
+      }
+    });    
+  }
+
+  // getTimeStamp(timestamp) {
+  //   return this.datePipe.transform(timestamp, 'HH:mm dd-MMM-yyyy')
+  // }
 }

@@ -24,6 +24,7 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 // @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;300&display=swap");
 // @import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
@@ -31,6 +32,15 @@
 // @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap");
+
+
+
+/* NGX Datatable CSS */
+// @import '~assets/ngx-style/_index.css';
+@import '~assets/ngx-style/dark.css';
+// @import '~assets/ngx-style/_material.css';
+// @import '~assets/ngx-style/_bootstrap.css';
+@import '~assets/ngx-style/icons.css';
 
 :root {
     --text-color: #a1a1a1;

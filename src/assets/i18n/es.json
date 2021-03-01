@@ -1,6 +1,6 @@
 {
 	"home": {
-		"headerTitle": "Farmacias De Guy Park",
+		"headerTitle": "Farmacias De Your",
 		"serviceOptionTitle": "Opciones de medicación",
 		"TransferPrescripsion": "Transferencia de prescripción",
 		"RefillRequest": "Solicitud de recarga",
@@ -10,7 +10,15 @@
 		"explore": "Todo tipo de cuidado",
 		"allServices": "Todos los servicios",
 		"title": "Sobre nosotras",
-		"subTitle": "Engendrando vida resplandeciente"
+		"subTitle": "Engendrando vida resplandeciente",
+		"vaccineRequest": "Solicitud de vacuna"
+	},
+	"history": {
+		"History": "Historia",
+		"Refill_Request": "Solicitud de recarga",
+		"Transfer_Prescription": "Transferencia de prescripción",
+		"Price_Check": "Comprobación de precio",
+		"Vaccine_Request": "Solicitud de vacuna"
 	},
 	"sidemenu": {
 		"Home": "Casa",
@@ -24,7 +32,12 @@
 		"LogOut": "Cerrar sesión",
 		"English": "Inglesa",
 		"Spanish": "Española",
-		"Profile":"Perfil"
+		"Profile":"Perfil",
+		"History": "Historia",
+		"Refill_Request": "Solicitud de recarga",
+		"Transfer_Prescription": "Transferencia de prescripción",
+		"Price_Check": "Comprobación de precio",
+		"Vaccine_Request": "Solicitud de vacuna"
 	},
 	"services": {
 		"headerTitle": "Nuestros servicios",
@@ -37,19 +50,19 @@
 		"service5": "Plan de medicamentos genéricos de $ 4.99",
 		"service6": "Acepte todos los planes de seguro principales",
 		"content1": "E-Prescribing respalda el cambio a una versión sin papel para los prescriptores, pagadores y farmacéuticos para tomar mejores decisiones de administración de medicamentos.",
-		"content2": "Guy Park Pharmacy proporciona empaques especiales en la parte superior de cada paquete individual. Enumera el nombre de la persona, el medicamento dentro y el tiempo que debe tomarse.",
+		"content2": "Your Pharmacy proporciona empaques especiales en la parte superior de cada paquete individual. Enumera el nombre de la persona, el medicamento dentro y el tiempo que debe tomarse.",
 		"content3": "Entrega en la acera para evitar que nuestros pacientes se expongan a enfermedades y reducir la cantidad de personas que visitan nuestro campus.",
-		"content4": "Es conveniente y es GRATIS. Solicite que sus pedidos se entreguen en su hogar u oficina. Envíe sus solicitudes a Guy Park Pharmacy.",
-		"content5": "¡Haga de Guy Park Pharmacy su farmacia preferida y ahorre! Nuestros ahorros en recetas ofrecen ofertas de recetas, recetas baratas y ahorros generales en farmacias. Cientos de medicamentos genéricos están disponibles a precios muy reducidos. $ 4.99 Plan de medicamentos genéricos para un suministro de 30 días.",
-		"content6": "Guy Park Pharmacy acepta todos los planes de seguro principales. También lo ayudamos a encontrar soluciones más económicas utilizando genéricos o compañías farmacéuticas competitivas y asesoramiento sobre seguros."
+		"content4": "Es conveniente y es GRATIS. Solicite que sus pedidos se entreguen en su hogar u oficina. Envíe sus solicitudes a Your Pharmacy.",
+		"content5": "¡Haga de Your Pharmacy su farmacia preferida y ahorre! Nuestros ahorros en recetas ofrecen ofertas de recetas, recetas baratas y ahorros generales en farmacias. Cientos de medicamentos genéricos están disponibles a precios muy reducidos. $ 4.99 Plan de medicamentos genéricos para un suministro de 30 días.",
+		"content6": "Your Pharmacy acepta todos los planes de seguro principales. También lo ayudamos a encontrar soluciones más económicas utilizando genéricos o compañías farmacéuticas competitivas y asesoramiento sobre seguros."
 	},
 	"curbside": {
 		"title": "Entrega en la acera",
 		"subTitle": "Todo tipo de cuidados",
-		"contentTitle": "Farmacias De Guy Park",
-		"content1": "proporcionar entrega en la acera para evitar que nuestros pacientes se expongan a enfermedades y reducir la cantidad de personas que visitan nuestro campus, Guy Park Pharmacy ofrece servicios gratuitos de entrega de recetas a los hogares de nuestros pacientes",
-		"content2": "Los pacientes pueden llamar a la farmacia de Guy Park al +1 904-222-8490 para solicitar este servicio y hacer los arreglos apropiados. Para aquellos pacientes que deseen utilizar la entrega en la acera en la farmacia, pueden estacionarse en el en la acera más cercana a la Farmacia y llame al +1 904-222-8490 para que le entreguen su (s) receta (s) en la acera ",
-		"content3": "Los artículos de farmacia de venta libre también están disponibles con servicios de entrega a domicilio y en la acera. Los miembros de la comunidad pueden llamar a Guy Park Pharmacy al +1 904-222-8490 para cualquier pregunta relacionada con estos servicios"
+		"contentTitle": "Farmacias De Your",
+		"content1": "proporcionar entrega en la acera para evitar que nuestros pacientes se expongan a enfermedades y reducir la cantidad de personas que visitan nuestro campus, Your Pharmacy ofrece servicios gratuitos de entrega de recetas a los hogares de nuestros pacientes",
+		"content2": "Los pacientes pueden llamar a la farmacia de Your al +1 904-222-8490 para solicitar este servicio y hacer los arreglos apropiados. Para aquellos pacientes que deseen utilizar la entrega en la acera en la farmacia, pueden estacionarse en el en la acera más cercana a la Farmacia y llame al +1 904-222-8490 para que le entreguen su (s) receta (s) en la acera ",
+		"content3": "Los artículos de farmacia de venta libre también están disponibles con servicios de entrega a domicilio y en la acera. Los miembros de la comunidad pueden llamar a Your Pharmacy al +1 904-222-8490 para cualquier pregunta relacionada con estos servicios"
 	},
 	"eScribe": {
 		"title": "Recetas electrónicas",
@@ -60,7 +73,7 @@
 		"list2": "Mejora la seguridad del paciente",
 		"list3": "Aumentar la eficiencia",
 		"list4": "Reduce el tiempo de espera en la farmacia",
-		"content2": "Al usar una computadora o dispositivo portátil con software de prescripción electrónica, los prescriptores pueden acceder electrónicamente a la información de beneficios de prescripción del paciente y al historial de medicación del paciente, y enrutar las prescripciones electrónicamente a Guy Park Pharmacy",
+		"content2": "Al usar una computadora o dispositivo portátil con software de prescripción electrónica, los prescriptores pueden acceder electrónicamente a la información de beneficios de prescripción del paciente y al historial de medicación del paciente, y enrutar las prescripciones electrónicamente a Your Pharmacy",
 		"content3": "E-Prescription es útil para nuestros clientes, que siempre están en movimiento y pueden no tener tiempo para surtir sus recetas tradicionalmente."
 	},
 	"speciality": {
@@ -78,13 +91,13 @@
 	"drug": {
 		"title": "Plan de medicamentos genéricos de $ 4.99",
 		"subTitle": "Todo tipo de cuidados",
-		"contentTitle": "Farmacias De Guy Park",
-		"content1": "¡Haga de Guy Park Pharmacy su farmacia preferida y ahorre! Nuestros ahorros en recetas ofrecen ofertas de recetas, recetas baratas y ahorros generales en farmacias. Cientos de medicamentos genéricos están disponibles a precios muy reducidos. $ 4.99 Plan de medicamentos genéricos para un suministro de 30 días."
+		"contentTitle": "Farmacias De Your",
+		"content1": "¡Haga de Your Pharmacy su farmacia preferida y ahorre! Nuestros ahorros en recetas ofrecen ofertas de recetas, recetas baratas y ahorros generales en farmacias. Cientos de medicamentos genéricos están disponibles a precios muy reducidos. $ 4.99 Plan de medicamentos genéricos para un suministro de 30 días."
 	},
 	"major": {
 		"title": "Plan de seguro",
 		"subTitle": "Todo tipo de cuidados",
-		"contentTitle": "Farmacias De Guy Park",
+		"contentTitle": "Farmacias De Your",
 		"content1": "acepta todos los planes de seguro principales, tales como:",
 		"list1": "Aetna",
 		"list2": "Cruz Azul y Escudo Azul",
@@ -110,7 +123,7 @@
 		"title": "Notificación"
 	},
 	"form": {
-		"appName":"Farmacias De Guy Park",
+		"appName":"Farmacias De Your",
 		"form1": "Prescripción de transferencia",
 		"form2": "Solicitud de recarga",
 		"form3": "Comprobación de precio",
@@ -196,7 +209,7 @@
 		"subTitle": "Engendrando vida resplandeciente",
 		"contentTitle1": "Estamos bien equipados con personal de verbalización en español.",
 		"subTitle1": "Una farmacia para todas sus necesidades.",
-		"content1": "Guy Park Pharmacy es una farmacia comunitaria independiente en Amsterdam, Nueva York, que presta servicios a farmacias en los alrededores.",
+		"content1": "Your Pharmacy es una farmacia comunitaria independiente en Amsterdam, Nueva York, que presta servicios a farmacias en los alrededores.",
 		"contentTitle2": "Nuestra misión",
 		"content2": "Nuestra misión es optimizar los servicios de atención médica al proporcionar una experiencia de farmacia conveniente y atenta para administrar mejor la salud y el bienestar del paciente.",
 		"content3": "Como farmacia independiente, nos tomamos el tiempo para brindar un mayor nivel de atención personal, consejos confiables que nuestros pacientes pueden no encontrar en las farmacias de la cadena. Con cada visita, descubrirá un galardonado servicio de calidad de un farmacéutico que lo conoce por su nombre, no solo por su número.",
@@ -211,11 +224,11 @@
 		"subTitle": "Puede ubicarnos en ubicaciones cercanas",
 		"contentTitle1": "Puede ubicarnos en diferentes ubicaciones cercanas",
 		"location": "Ubicación",
-		"name": "Farmacias De Guy Park",
-		"address1": "151 Guy Park Ave,",
+		"name": "Farmacias De Your",
+		"address1": "151 Your Ave,",
 		"address2":"Amsterdam, Nueva York 12010",
 		"country":"Estados Unidos",
-		"email": "guyparkpharmacy@gmail.com",
+		"email": "yourpharmacy@gmail.com",
 		"phone": "518-212-6020",
 		"Phone": "Teléfono"
 		
@@ -229,7 +242,7 @@
 		"subTitle": "Aviso de prácticas de privacidad de Hippa",
 		"contentTitle1": "Este aviso describe cómo se puede usar y divulgar su información médica y cómo puede obtener acceso a esta información.",
 		"contentTitle2": "Por favor revíselo cuidadosamente.",
-		"content1": "Cuando este Aviso de prácticas de privacidad ('Aviso') se refiere a 'nosotros' o 'nosotros', se refiere a Guy Park Pharmacy y a todos los farmacéuticos que brindan servicios de atención médica y a los empleados de nuestra farmacia.",
+		"content1": "Cuando este Aviso de prácticas de privacidad ('Aviso') se refiere a 'nosotros' o 'nosotros', se refiere a Your Pharmacy y a todos los farmacéuticos que brindan servicios de atención médica y a los empleados de nuestra farmacia.",
 		"content2": "La ley nos exige mantener la privacidad de su información de salud protegida (“PHI”), seguir los términos del Aviso actualmente en vigencia, entregarle este Aviso que establece nuestras obligaciones legales y prácticas de privacidad con respecto a su PHI y notificar individuos afectados luego de una violación de la PHI no segura.",
 		"content3": "Este aviso describe cómo podemos usar y divulgar su PHI. Además, este Aviso explica los derechos que tiene con respecto a su PHI y ciertas obligaciones que debemos cumplir de conformidad con la ley.",
 		"content4": "Nos reservamos el derecho de modificar este Aviso. Si realizamos modificaciones materiales a este Aviso, publicaremos una copia del Aviso revisado en la farmacia, en nuestro sitio web y le ofreceremos una copia del Aviso revisado.",

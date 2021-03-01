@@ -4,7 +4,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { UserService } from '../../services/user.service';
 import { FormService } from '../../services/form.service';
 import { AppComponent } from '../../app.component';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { DatePipe } from '@angular/common';
 declare const $: any;
 @Component({
   selector: 'app-price-check',
@@ -13,6 +14,7 @@ declare const $: any;
 })
 export class PriceCheckComponent implements OnInit {
 
+
   priceCheckForm: FormGroup;
   submitted: Boolean = false;
   isDisable: Boolean = false;
@@ -20,13 +22,18 @@ export class PriceCheckComponent implements OnInit {
   language: string = localStorage.getItem('language');
   currentUserData = JSON.parse(localStorage.getItem('userFormData'));
   loading: Boolean = false;
-
+  formData:any;
+  comments:any;
+  currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  newComment:any = '';
   constructor(
     private _translate: TranslateService,
     public _userService: UserService,
     public _formService: FormService,
     public appComponant: AppComponent,
-    public router: Router
+    public router: Router,
+    public route: ActivatedRoute,  
+    private datePipe: DatePipe
   ) {
     this.priceCheckForm = new FormGroup({
       first_name: new FormControl('', [Validators.required]),
@@ -49,10 +56,31 @@ export class PriceCheckComponent implements OnInit {
       medicine_5_strength: new FormControl(''),
       madicine_5_quantity: new FormControl(''),
       note_to_pharmacy: new FormControl('')
-    })
-  }
+    });
 
+    
+
+
+
+
+    // Call get comments API:
+    
+  }
+  
   ngOnInit() {
+    this.route.queryParams.subscribe((params) => {
+      this.formData = JSON.parse(params.form_data);
+      console.log(this.formData);
+      
+      this.getComments();
+      for (const key in this.formData) {
+        if (key !== 'post_id') {
+          console.log(this.priceCheckForm.controls)
+          this.priceCheckForm.controls[key].setValue(this.formData[key]);
+        }
+      }
+
+    });
     this._userService.languageChanges().subscribe((res: any) => {
       console.log("RESPONSE", res);
       this.language = res.language
@@ -131,4 +159,52 @@ export class PriceCheckComponent implements OnInit {
       this.formDetail = this._translate.instant("form")
     }, 250);
   }
+
+
+  // get comments
+  getComments() {
+    let url = `price_check_comment/get?post_id=${this.formData.post_id}`;
+    this._formService.getComments(url).then((res) => {
+      console.log(res);
+      this.comments = JSON.parse(JSON.stringify(res)).reverse();
+      this.loading =false
+    })
+    .catch((err) => {
+      console.log(err);
+      
+    });
+  }
+
+
+  postComment(){
+    console.log(this.newComment);
+
+    let obj = {
+      comment_post_ID : this.formData.post_id,
+      comment_parent: this.currentUser.id,
+      comment: this.newComment,
+      author_name: `${this.formData.first_name} ${this.formData.last_name}`,
+      author_email: this.formData.email
+      
+    }
+    this.newComment = ''
+    let url = "price_check_comment/create"
+    this.loading = true;
+    this._formService.postComment(obj, url).then((res) => {
+      console.log(res);
+      this.getComments();
+    })
+    .catch((err) => {
+      console.log(err);
+      
+    });
+    
+  }
+
+
+  getTimeStamp(timestamp) {
+    return this.datePipe.transform(timestamp, 'HH:mm dd-MMM-yyyy')
+  }
+  
+
 }
