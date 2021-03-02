@@ -179,31 +179,38 @@
     </form>
   </div>
 
-  <ion-list class="commentSection ion-margin-bottom" *ngIf="comments && comments.length">
-    <ion-item>
-      <ion-label class="text-center mt-0" style="color: #033295d6;" >Comments</ion-label>
-    </ion-item>
-    <ion-item class="comment-wrapper" *ngFor="let comment of comments; let i = index">
-      <ion-label class="comment_date">
-        <!-- {{getTimeStamp(comment.comment_date)}} -->
-        {{comment.comment_date}}
-      </ion-label>
-      <ion-label class="comment-title">
-        {{ currentUser.id == comment.user_id ? "Me" : "Admin"}}
-      </ion-label>
-      <ion-label class="mt-16 comment-data" color="black">{{comment.comment_content}}</ion-label>
-    </ion-item>
-  </ion-list>
-  <ion-card style="margin: 10px 0;" *ngIf="comments && comments.length">
-    <ion-list>
-      <ion-item>
-        <ion-textarea [(ngModel)]="newComment" placeholder="Comment here..."></ion-textarea>
+  <div class="row m-0 mt-4 w-100">
+    <ion-card class="w-100">
+      <ion-item lines="none">
+        <ion-textarea [(ngModel)]="newComment" rows="4" placeholder="Write your comment here..."></ion-textarea>
       </ion-item>
-    </ion-list>
-    <ion-button (click)="postComment()" expand="block" class="ion-padding-horizontal ion-margin-bottom" [disabled]="!newComment">
+      
+    </ion-card>
+    <ion-button (click)="postComment()" class="ml-auto ion-padding-horizontal ion-margin-bottom"
+      [disabled]="!newComment">
       Comment
     </ion-button>
-  </ion-card>
+  </div>
+  <div class="comment-section row m-0 p-3">
+    <ion-label class="mb-3 mt-0 w-100 font-weight-bolder" style="color: #033295d6;">Comments</ion-label>
+    <ng-container *ngIf="comments && comments.length; else elseTemplate">
+      <div class="col-9 py-2 my-2 rounded shadow" [ngClass]="{'my-comments': currentUser.id == comment.user_id}" *ngFor="let comment of comments; let i = index">
+        
+          <ion-text class="comment-title">
+            {{ currentUser.id == comment.user_id ? "Me" : "Admin"}}
+          </ion-text>
+          <ion-text class="mt-16 comment-data" color="black">{{comment.comment_content}}</ion-text>
+          <ion-text class="comment_date">
+            <!-- {{getTimeStamp(comment.comment_date)}} -->
+            {{comment.comment_date}}
+          </ion-text>
+   
+      </div>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <h6> No comments yet</h6>
+    </ng-template>
+  </div>
 
   <div *ngIf="loading">
     <div id="loader-wrapper">

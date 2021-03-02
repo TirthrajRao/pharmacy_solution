@@ -16,13 +16,17 @@ export const environment = {
 
     apiKey: "AIzaSyBmDSSZpvlty51OkEc3cae9t6V3UQJ9hsU",
     authDomain: "pharmacy-solution.firebaseapp.com",
-    databaseURL: "https://pharmacy-solution.firebaseio.com",
+    // databaseURL: "https://pharmacy-solution.firebaseio.com",
+    databaseURL: "https://pharmacy-solution-default-rtdb.firebaseio.com",
+    
     projectId: "pharmacy-solution",
     storageBucket: "pharmacy-solution.appspot.com",
     messagingSenderId: "619338378765",
     appId: "1:619338378765:web:4525585aedc53f88d72f44",
     measurementId: "G-ZJSBPBC51X"
   }
+
+  
 };
 
 /*

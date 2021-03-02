@@ -60,6 +60,7 @@ export class MyHammerConfig extends HammerGestureConfig {
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
 }
+AngularFireModule.initializeApp(environment.firebaseConfig);
 
 @NgModule({
   declarations: [

@@ -184,7 +184,7 @@ export class RefillReqComponent implements OnInit {
   getComments() {
     
 
-    let url = `refill_request_comment/get?user_id=${this.currentUser.id}?post_id=${this.formData.post_id}`;
+    let url = `refill_request_comment/get?post_id=${this.formData.post_id}`;
     this._formService.getComments(url).then((res) => {
       console.log(res);
       this.comments = res;
@@ -209,7 +209,7 @@ export class RefillReqComponent implements OnInit {
       
     }
     this.newComment = ''
-    let url = "refill_request_comment/create"
+    let url = "price_check_comment/create"
     this.loading = true;
     this._formService.postComment(obj, url).then((res) => {
       console.log(res);

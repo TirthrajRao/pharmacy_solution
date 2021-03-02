@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar class="toolbar-color1">
+    <div class="menu d-flex">
+      <div class="menu-icon float-right ml-auto">
+        <ion-back-button class=" text-white" defaultHref="/">
+        </ion-back-button>
+      </div>
+      <ion-title class="text-center">Chat</ion-title>
+      <div class="menu-icon float-right ml-auto">
+        <ion-menu-button class=" text-white">
+        </ion-menu-button>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content #content>
+
+  <div class="comment-section row m-0 p-3">
+    <!-- <ion-label class="mb-3 mt-0 w-100 font-weight-bolder" style="color: #033295d6;">Comments</ion-label> -->
+    <ng-container *ngIf="comments && comments.length; else elseTemplate">
+      <div class="col-9 py-2 my-2 rounded shadow" id="message{{i}}"
+        [ngClass]="{'my-comments': currentUser.id == comment.sender_id}"
+        *ngFor="let comment of comments; let i = index">
+
+        <ion-text class="comment-title">
+          {{ currentUser.id == comment.sender_id ? "You" : "Admin"}}
+        </ion-text>
+        <ion-text class="mt-16 comment-data" color="black">{{comment.comment_content}}</ion-text>
+        <ion-text class="comment_date">
+          {{getTimeStamp(comment.comment_date)}}
+          <!-- {{comment.comment_date}} -->
+        </ion-text>
+
+      </div>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <h4> Start conversation...</h4>
+    </ng-template>
+  </div>
+</ion-content>
+
+<!-- <ion-footer>
+  <div class="row m-0 w-100 ion-no-padding">
+    <ion-col size="8">
+      <ion-card class="w-100">
+        <ion-item lines="none">
+          <ion-textarea enterkeyhint="send" [(ngModel)]="newComment" rows="2" placeholder="Write your message here..."></ion-textarea>
+        </ion-item>
+  
+      </ion-card>
+
+    </ion-col>
+    <ion-col size="4">
+      <ion-button (click)="sendMessage()" class="ml-auto ion-padding-horizontal ion-margin-bottom"
+        [disabled]="!newComment">
+        Send message
+      </ion-button>
+
+    </ion-col>
+  </div>
+
+</ion-footer> -->
+<ion-footer>
+  <ion-item>
+    <ion-input type="text" placeholder="Write your message here..." [(ngModel)]="newComment">
+    </ion-input>
+    <ion-button fill="clear" class="ion-no-margin" (click)="sendMessage()" [disabled]="!newComment">
+      <ion-icon name="send-outline"></ion-icon>
+    </ion-button>
+  </ion-item>
+  <!-- <div class="bottom_bar">
+    <div slot="end" style="margin-left: auto; ">
+    </div>
+  </div> -->
+</ion-footer>

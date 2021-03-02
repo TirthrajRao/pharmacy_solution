@@ -26,6 +26,7 @@ export class PriceCheckComponent implements OnInit {
   comments:any;
   currentUser = JSON.parse(localStorage.getItem("currentUser"));
   newComment:any = '';
+  isNewForm : boolean = true;
   constructor(
     private _translate: TranslateService,
     public _userService: UserService,
@@ -69,15 +70,19 @@ export class PriceCheckComponent implements OnInit {
   
   ngOnInit() {
     this.route.queryParams.subscribe((params) => {
-      this.formData = JSON.parse(params.form_data);
-      console.log(this.formData);
-      
-      this.getComments();
-      for (const key in this.formData) {
-        if (key !== 'post_id') {
-          console.log(this.priceCheckForm.controls)
-          this.priceCheckForm.controls[key].setValue(this.formData[key]);
+      if(params.form_data){
+        this.formData = JSON.parse(params.form_data);
+        console.log(this.formData);
+        
+        this.getComments();
+        for (const key in this.formData) {
+          this.isNewForm = false;
+          if (key !== 'post_id') {
+            console.log(this.priceCheckForm.controls)
+            this.priceCheckForm.controls[key].setValue(this.formData[key]);
+          }
         }
+
       }
 
     });

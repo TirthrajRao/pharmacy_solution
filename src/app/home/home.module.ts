@@ -34,6 +34,7 @@ import { AES256 } from '@ionic-native/aes-256/ngx';
 import * as Hammer from 'hammerjs';
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { HistoryComponent } from '../history/history.component';
+import { AmendmentsComponent } from '../amendments/amendments.component';
 
 export class MyHammerConfig extends HammerGestureConfig {
 
@@ -81,7 +82,9 @@ export class MyHammerConfig extends HammerGestureConfig {
     NotificationDetailComponent,
     HippaNoticeComponent,
     ProfileComponent,
-    HistoryComponent
+    HistoryComponent,
+    AmendmentsComponent
+    
   ],
   providers: [
     {

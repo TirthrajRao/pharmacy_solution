@@ -21,6 +21,7 @@ import { HippaNoticeComponent } from '../hippa-notice/hippa-notice.component';
 import { NotificationDetailComponent } from '../Notification/notification-detail/notification-detail.component';
 import { ProfileComponent } from '../profile/profile.component';
 import { HistoryComponent } from '../history/history.component';
+import { AmendmentsComponent } from '../amendments/amendments.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
         path: '',
         redirectTo: 'home-page',
         pathMatch: 'full'
+      },
+      {
+        path: "amendments",
+        component: AmendmentsComponent
       },
       {
         path: "history",

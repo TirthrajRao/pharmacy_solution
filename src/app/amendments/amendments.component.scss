@@ -1,11 +1,6 @@
 ion-content {
     // --background: rgba(228, 228, 228, 20%);
-    // --background:none;
-    // background-image: url('../../../assets/images/login-bg.png');
-    // background-repeat: no-repeat;
-    // background-position: center;
     --background: #f0f2f9;
-    // opacity: 20%;
     .rx-number {
         .form-control {
             border-radius: 0;
@@ -15,7 +10,6 @@ ion-content {
             font-size: 15px;
         }
     }
-   
     h4 {
         margin: 0;
         padding-left: 2px;
@@ -29,29 +23,22 @@ ion-content {
         background: white;
         .icon {
             height: 21px;
-            width: 17px;
+            width: 26px;
             margin-right: 5px;
         }
         .logo-img {
             height: 37px;
         }
     }
-    ion-label{
-        color: #033295d6;
+    ion-label {
+        
         font-size: 15px;
     }
 }
-.submit-btn{
-    .btn{
-        background: linear-gradient(to right, #15275E, #4160B8);
-        padding: 8px 43px;
-        font-size: 21px;
-        @media only screen and (max-width: 360px) {
-            padding: 6px 37px;
-            font-size: 18px;
-        }
-    }
-}
+
+
+
+
 
 
 .comment-section {
@@ -60,7 +47,7 @@ ion-content {
         background-color: #93b9fd3d !important;
     }
     .my-comments {
-        text-align: right !important;
+        // text-align: right !important;
         margin-left: auto !important;
         background-color: #4060b766 !important;
     }
@@ -120,4 +107,14 @@ ion-content {
         margin-top: 25px;
         
     }
+}
+
+ion-footer{
+    background-color: #f0f2f9;
+    box-shadow: -1px -5px 10px white;
+
+    .bottom_bar{
+		padding:10px;
+        display: flex;
+	}
 }

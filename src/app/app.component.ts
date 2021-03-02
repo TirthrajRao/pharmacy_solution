@@ -11,6 +11,7 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { BackgroundMode } from '@ionic-native/background-mode/ngx';
 import { AngularFireFunctions } from '@angular/fire/functions';
 import * as firebase from 'firebase/app';
+import { environment } from '../environments/environment';
 // import * as cordova from 'com.red_folder.phonegap.plugin.backgroundservice.sample'
 declare const $: any;
 declare const cordova: any;
@@ -68,6 +69,7 @@ export class AppComponent {
       }, 700);
       this.getCurrentLatLng();
       this.getNotification();
+      firebase.initializeApp(environment.firebaseConfig)
     });
   }
 

@@ -102,6 +102,12 @@ export class HomePage {
         icon: 'assets/images/black/user.svg',
         icon1: 'assets/images/white/user.svg',
         url: '/home/profile'
+      },
+      {
+        name: "Chat",
+        icon: 'assets/images/black/user.svg',
+        icon1: 'assets/images/white/user.svg',
+        url: '/home/amendments'
       }
     ]
   }

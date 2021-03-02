@@ -24,7 +24,7 @@
         </a>
       </li>
     </ul>
-    <form [formGroup]="priceCheckForm">
+    <form [formGroup]="priceCheckForm" *ngIf="formDetail">
       <div class="tab-content" id="main_form">
         <div class="tab-pane active" role="tabpanel" id="step1">
           <div class="form-group">
@@ -150,24 +150,23 @@
     </form>
   </div>
 
-  <div class="row m-0 mt-4 w-100">
+  <div class="row m-0 mt-4 w-100" *ngIf="!isNewForm">
     <ion-card class="w-100">
       <ion-item lines="none">
         <ion-textarea [(ngModel)]="newComment" rows="4" placeholder="Write your comment here..."></ion-textarea>
       </ion-item>
-      <!-- <ion-list>
-      </ion-list> -->
+      
     </ion-card>
     <ion-button (click)="postComment()" class="ml-auto ion-padding-horizontal ion-margin-bottom"
       [disabled]="!newComment">
       Comment
     </ion-button>
   </div>
-  <div class="comment-section row m-0 p-3">
+  <div class="comment-section row m-0 p-3" *ngIf="!isNewForm">
     <ion-label class="mb-3 mt-0 w-100 font-weight-bolder" style="color: #033295d6;">Comments</ion-label>
     <ng-container *ngIf="comments && comments.length; else elseTemplate">
       <div class="col-9 py-2 my-2 rounded shadow" [ngClass]="{'my-comments': currentUser.id == comment.user_id}" *ngFor="let comment of comments; let i = index">
-        <!-- <div> -->
+        
           <ion-text class="comment-title">
             {{ currentUser.id == comment.user_id ? "Me" : "Admin"}}
           </ion-text>
@@ -176,18 +175,14 @@
             <!-- {{getTimeStamp(comment.comment_date)}} -->
             {{comment.comment_date}}
           </ion-text>
-        <!-- </div> -->
+   
       </div>
     </ng-container>
     <ng-template #elseTemplate>
       <h6> No comments yet</h6>
     </ng-template>
   </div>
-  <!-- <ion-list class="commentSection ion-margin-bottom">
-    <ion-item class="comment-wrapper" *ngFor="let comment of comments; let i = index">
-    </ion-item>
 
-  </ion-list> -->
 
 
   <div *ngIf="loading">
